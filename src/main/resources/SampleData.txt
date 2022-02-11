@@ -1,0 +1,36 @@
+------------------------ Sample Topic : ----------------------------
+[
+  {
+    "id": "java",
+    "name": "Core Java",
+    "description": "Core Java Description"
+  },
+  {
+    "id": "js",
+    "name": "JavaScript",
+    "description": "JavaScript Description"
+  },
+  {
+    "id": "spring",
+    "name": "Spring Boot",
+    "description": "Spring Boot Description"
+  }
+]
+
+
+------------------------ Sample Course : ----------------------------
+[
+    {
+        "id": "java-streams",
+        "name": "Java 8 Streams",
+        "description": "Java Streams 8 Description",
+        "topic": {
+            "id": "java",
+            "name": "Core Java",
+            "description": "Core Java Description"
+        }
+    }
+]
+
+------------------------ Sample Lesson : ----------------------------
+
