@@ -583,13 +583,13 @@ public class TopicService {
 
 ### Course APIs - Creation
 
-| Request Type | URI                                  | Description          |
-| ------------ | ------------------------------------ | -------------------- |
-| GET          | /topics/{topicId}/courses            | Get all Topics       |
-| GET          | /topics/{topicId}/courses/{courseId} | Get a specific Topic |
-| POST         | /topics/{topicId}/courses            | Create a new Topic   |
-| PUT          | /topics/{topicId}/courses/{courseId} | Updates the topic.   |
-| DELETE       | /topics/{topicId}/courses/{courseId} | Deletes the topic    |
+| Request Type | URI                                  | Description           |
+| ------------ | ------------------------------------ | --------------------- |
+| GET          | /topics/{topicId}/courses            | Get all Courses       |
+| GET          | /topics/{topicId}/courses/{courseId} | Get a specific Course |
+| POST         | /topics/{topicId}/courses            | Create a new Course   |
+| PUT          | /topics/{topicId}/courses/{courseId} | Updates the Course.   |
+| DELETE       | /topics/{topicId}/courses/{courseId} | Deletes the Course    |
 
 
 
@@ -744,6 +744,44 @@ public List<Course> getAllCourses(String id) {
 
 
 
+### Lesson APIs
+
+| Request Type | URI                                                     | Description           |
+| ------------ | ------------------------------------------------------- | --------------------- |
+| GET          | /topics/{topicId}/courses/{courseId}/lessons            | Get all Lessons       |
+| GET          | /topics/{topicId}/courses/{courseId}/lessons/{lessonId} | Get a specific Lesson |
+| POST         | /topics/{topicId}/courses/{courseId}/lessons            | Create a new Lesson   |
+| PUT          | /topics/{topicId}/courses/{courseId}/lessons/{lessonId} | Updates the Lesson.   |
+| DELETE       | /topics/{topicId}/courses/{courseId}/lessons/{lessonId} | Deletes the Lesson    |
+
+Used Lombok in ***Lesson.java*** to avoid unnecessary boilerplate code.
+
+```java
+package com.swarna.courseapi.lesson;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Lesson {
+
+	@Id
+	private String id;
+	private String name;
+	private String description;
+	
+	@ManyToOne
+	private Course course;
+}
+```
+
+Changed the ***LessonController.java*** , ***LessonService.java*** and ***LessonRepository.java*** accordingly. 
+
+Visit below address to see all the latest changes for these files.
+
+
+
 
 
 ### Packaging Production Ready App
@@ -798,6 +836,94 @@ http://localhost:8080/actuator
 http://localhost:8080/actuator/health
 http://localhost:8080/beans
 ```
+
+
+
+### Hosting in Heroku 
+
+Heroku is a popular platform for hosting all types of applications. There is a Free plan for personal projects also. 
+
+In existing Git repo, we just need to Login to heroku, add remote and push our changes
+
+**Install the Heroku CLI**
+
+Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line).
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+```bash
+$ heroku login
+```
+
+**Clone the repository** (You can ignore this step if you already have git repo initialised)
+
+Use Git to clone courseapi-spring-boot's source code to your local machine.
+
+```bash
+$ heroku git:clone -a courseapi-spring-boot 
+$ cd courseapi-spring-boot
+```
+
+
+
+#### **Adding Heroku Remote**
+
+**For New App**
+
+```bash
+$ heroku create -a example-app
+Creating app... done, ⬢ example-app
+https://thawing-inlet-61413.herokuapp.com/ | https://git.heroku.com/example-app.git
+```
+
+You can use the `git remote` command to confirm that a remote named `heroku` has been set for your app:
+
+```bash
+$ git remote -v
+heroku  https://git.heroku.com/example-app.git (fetch)
+heroku  https://git.heroku.com/example-app.git (push)
+```
+
+
+
+**For an Existing App**
+
+Add a remote to your local repository with the `heroku git:remote` command. All you need is your Heroku app’s name:
+
+```bash
+$ heroku git:remote -a example-app
+set git remote heroku to https://git.heroku.com/example-app.git
+```
+
+
+
+#### Deploy in heroku
+
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+```bash
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+$ heroku open       -> to open live application in default browser
+$ heroku logs -t    -> to see live logs
+```
+
+
+
+#### Adding Database Addons
+
+We can choose db instance from a large addon library for heroku app.
+
+For MySQL go to Resources -> Configure Addons , we can choose [**JawsDB MySQL**](https://elements.heroku.com/addons/jawsdb) . There is also a free plan for this.
+
+Resources -> Configure Addons ->  [**JawsDB MySQL**](https://elements.heroku.com/addons/jawsdb) ->  Install JawsDB MySQL -> Select the app to provision.
+
+- To see database connection details , from the resources page, click on 
+
+  JawsDB MySQL -> Settings -> View Credentials
+
+- We dont need to add the connection details in our application. Heroku will do that intelligently.
 
 
 

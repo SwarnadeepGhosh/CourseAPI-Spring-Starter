@@ -1,0 +1,305 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CourseAPI-PROD",
+		"_postman_id": "24b0de1e-b4a7-acfb-0780-493752bb4f1e",
+		"description": "https://github.com/SwarnadeepGhosh/Java-Backend/tree/master/CourseAPI-Spring-Starter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Courses Related",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAllCourse By Topic",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "We will get all courses associated with one topic."
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Course",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"java-streams\",\r\n    \"name\": \"Java Streams\",\r\n    \"description\": \"Java Streams Description\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Course for a Topic",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update (PUT) a Course",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"java-streams\",\n        \"name\": \"Java 8 Streams\",\n        \"description\": \"Java Streams 8 Description\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Course",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"java Streams\",\n        \"name\": \"Java 8 Streams\",\n        \"description\": \"Java Streams 8 Description\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lessons Related",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAllLessons By Course",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "We will get all courses associated with one topic."
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Lesson",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"java-collection\",\r\n    \"name\": \"Java collection\",\r\n    \"description\": \"Java collection Description\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Lesson for a Course",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-lambda",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update (PUT) a Lesson",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-lambda",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"java-lambda\",\r\n    \"name\": \"Java lambda\",\r\n    \"description\": \"Java lambda updated Description\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Lesson",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-collection",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"java Streams\",\n        \"name\": \"Java 8 Streams\",\n        \"description\": \"Java Streams 8 Description\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic Related",
+			"description": "",
+			"item": [
+				{
+					"name": "List All Topics /topics",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "List all topics"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Topic /topics/id",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/js",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get a specific topics"
+					},
+					"response": []
+				},
+				{
+					"name": "POST (Add a topic) /topics",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"java\",\r\n    \"name\": \"Core Java\",\r\n    \"description\": \"Core Java Description\"\r\n  }"
+						},
+						"description": "Add a topic"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT (Update) /topics/id",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/js",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"js\",\n    \"name\": \"Updated JavaScript\",\n    \"description\": \"Updated JavaScript Description\"\n}"
+						},
+						"description": "Update a topic"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a topic /topics/id",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/topics/javaee",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Deletes the specific topic"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Monitoring PROD",
+			"description": "",
+			"item": [
+				{
+					"name": "All links Actuator",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/actuator",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Health",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/actuator/health",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Beans Health",
+					"request": {
+						"url": "http://courseapi-spring-boot.herokuapp.com/beans",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

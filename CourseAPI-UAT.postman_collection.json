@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "CourseAPI-Spring-Starter",
+		"name": "CourseAPI-UAT",
 		"_postman_id": "24b0de1e-b4a7-acfb-0780-493752bb4f1e",
 		"description": "https://github.com/SwarnadeepGhosh/Java-Backend/tree/master/CourseAPI-Spring-Starter",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -96,6 +96,94 @@
 			]
 		},
 		{
+			"name": "Lessons Related",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAllLessons By Course",
+					"request": {
+						"url": "http://localhost:8080/topics/java/courses/java-8/lessons",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "We will get all courses associated with one topic."
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Lesson",
+					"request": {
+						"url": "http://localhost:8080/topics/java/courses/java-8/lessons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"java-collection\",\r\n    \"name\": \"Java collection\",\r\n    \"description\": \"Java collection Description\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Lesson for a Course",
+					"request": {
+						"url": "http://localhost:8080/topics/java/courses/java-8/lessons/java-lambda",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update (PUT) a Lesson",
+					"request": {
+						"url": "http://localhost:8080/topics/java/courses/java-8/lessons/java-lambda",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"java-lambda\",\r\n    \"name\": \"Java lambda\",\r\n    \"description\": \"Java lambda updated Description\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Lesson",
+					"request": {
+						"url": "http://localhost:8080/topics/java/courses/java-8/lessons/java-collection",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"java Streams\",\n        \"name\": \"Java 8 Streams\",\n        \"description\": \"Java Streams 8 Description\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Topic Related",
 			"description": "",
 			"item": [
@@ -135,7 +223,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"javaee\",\n    \"name\": \"Java Enterprise\",\n    \"description\": \"Java Enterprise Description\"\n}"
+							"raw": "{\r\n    \"id\": \"java\",\r\n    \"name\": \"Core Java\",\r\n    \"description\": \"Core Java Description\"\r\n  }"
 						},
 						"description": "Add a topic"
 					},
@@ -175,7 +263,7 @@
 			]
 		},
 		{
-			"name": "Monitoring Production",
+			"name": "Monitoring UAT",
 			"description": "",
 			"item": [
 				{

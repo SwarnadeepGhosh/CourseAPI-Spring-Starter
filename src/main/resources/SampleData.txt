@@ -33,4 +33,20 @@
 ]
 
 ------------------------ Sample Lesson : ----------------------------
-
+[
+    {
+        "id": "java-lambda",
+        "name": "Java lambda",
+        "description": "Java lambda updated Description",
+        "course": {
+            "id": "java-8",
+            "name": "Java 8",
+            "description": "Java 8 Description",
+            "topic": {
+                "id": "java",
+                "name": "Core Java",
+                "description": "Core Java Description"
+            }
+        }
+    }
+]
