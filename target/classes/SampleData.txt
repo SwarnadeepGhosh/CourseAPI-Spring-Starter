@@ -21,9 +21,9 @@
 ------------------------ Sample Course : ----------------------------
 [
     {
-        "id": "java-streams",
-        "name": "Java 8 Streams",
-        "description": "Java Streams 8 Description",
+        "id": "java-8",
+        "name": "Java 8",
+        "description": "Java 8 Description",
         "topic": {
             "id": "java",
             "name": "Core Java",
