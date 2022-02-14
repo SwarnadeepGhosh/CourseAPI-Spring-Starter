@@ -782,6 +782,85 @@ Visit below address to see all the latest changes for these files.
 
 
 
+### Actuator - Monitoring App
+
+Monitoring our app, gathering metrics, understanding traffic, or the state of our database become trivial with this dependency. Actuator is a production-grade monitoring tool
+
+Actuator is mainly used to **expose operational information about the running application** — health, metrics, info, dump, env, etc. It uses HTTP endpoints or JMX beans to enable us to interact with it.
+
+Adding to ***POM.xml***
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+**Actuator Links** 
+
+```json
+http://localhost:8080/actuator
+http://localhost:8080/actuator/health
+http://localhost:8080/beans
+```
+
+
+
+
+
+### Swagger (Documentation Tool)
+
+Swagger is an Interface Description Language for describing RESTful APIs expressed using JSON. Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services. Swagger includes automated documentation, code generation, and test-case generation. It used for - 
+
+- Develop APIs
+- Interact with APIs
+- Swagger UI - Document APIs (Most Important feature)
+
+
+
+**Adding Swagger to Spring Boot** 
+
+- Getting swagger 2 Spring Dependency. For now, we need to use Spring boot 2.5.2 , else it will give error in runtime.
+
+```xml
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.2</version>
+</parent>
+...
+<!-- Production Grade API Documentaion Tool -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+```
+
+
+
+- Enabling Swagger in code
+
+```java
+@SpringBootApplication 
+@EnableSwagger2  // Enabling Swagger so that it can run
+public class CourseApiApp {
+	public static void main(String[] args) {
+		SpringApplication.run(CourseApiApp.class, args);
+	}
+}
+```
+
+
+
+Now you can access swagger at : http://localhost:8080/swagger-ui.html
+
+- Configuring Swagger
+- Adding Details as annotations to APIs
+
+
+
 
 
 ### Packaging Production Ready App
@@ -810,31 +889,6 @@ You can run the jar file in any *java installed environment* using :
 ```bash
 swarna@swarna MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter (master)
 $ java -jar target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar
-```
-
-
-
-### Actuator - Monitoring App
-
-Monitoring our app, gathering metrics, understanding traffic, or the state of our database become trivial with this dependency. Actuator is a production-grade monitoring tool
-
-Actuator is mainly used to **expose operational information about the running application** — health, metrics, info, dump, env, etc. It uses HTTP endpoints or JMX beans to enable us to interact with it.
-
-Adding to ***POM.xml***
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-```
-
-**Actuator Links** 
-
-```json
-http://localhost:8080/actuator
-http://localhost:8080/actuator/health
-http://localhost:8080/beans
 ```
 
 

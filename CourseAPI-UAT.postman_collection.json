@@ -300,6 +300,34 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Swagger - Document APIs",
+			"description": "",
+			"item": [
+				{
+					"name": "API-Docs",
+					"request": {
+						"url": "http://localhost:8080/v2/api-docs",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger UI",
+					"request": {
+						"url": "http://localhost:8080/swagger-ui.html",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

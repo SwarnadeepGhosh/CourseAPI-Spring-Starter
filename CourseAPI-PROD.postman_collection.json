@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "CourseAPI-PROD",
-		"_postman_id": "24b0de1e-b4a7-acfb-0780-493752bb4f1e",
+		"_postman_id": "4d73314a-8fa9-7970-764e-13b6885a2895",
 		"description": "https://github.com/SwarnadeepGhosh/Java-Backend/tree/master/CourseAPI-Spring-Starter",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -14,10 +14,13 @@
 				{
 					"name": "GetAllCourse By Topic",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "We will get all courses associated with one topic."
 					},
 					"response": []
@@ -25,7 +28,7 @@
 				{
 					"name": "Add a Course",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses",
 						"method": "POST",
 						"header": [
 							{
@@ -45,10 +48,13 @@
 				{
 					"name": "Get a Course for a Topic",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -56,7 +62,7 @@
 				{
 					"name": "Update (PUT) a Course",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
 						"method": "PUT",
 						"header": [
 							{
@@ -76,7 +82,7 @@
 				{
 					"name": "Delete a Course",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-streams",
 						"method": "DELETE",
 						"header": [
 							{
@@ -102,10 +108,13 @@
 				{
 					"name": "GetAllLessons By Course",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "We will get all courses associated with one topic."
 					},
 					"response": []
@@ -113,7 +122,7 @@
 				{
 					"name": "Add a Lesson",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons",
 						"method": "POST",
 						"header": [
 							{
@@ -133,10 +142,13 @@
 				{
 					"name": "Get a Lesson for a Course",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-lambda",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-lambda",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -144,7 +156,7 @@
 				{
 					"name": "Update (PUT) a Lesson",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-lambda",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-lambda",
 						"method": "PUT",
 						"header": [
 							{
@@ -164,7 +176,7 @@
 				{
 					"name": "Delete a Lesson",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-collection",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons/java-collection",
 						"method": "DELETE",
 						"header": [
 							{
@@ -190,10 +202,13 @@
 				{
 					"name": "List All Topics /topics",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "List all topics"
 					},
 					"response": []
@@ -201,10 +216,13 @@
 				{
 					"name": "Get One Topic /topics/id",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/js",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/js",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Get a specific topics"
 					},
 					"response": []
@@ -212,7 +230,7 @@
 				{
 					"name": "POST (Add a topic) /topics",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics",
 						"method": "POST",
 						"header": [
 							{
@@ -232,7 +250,7 @@
 				{
 					"name": "PUT (Update) /topics/id",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/js",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/js",
 						"method": "PUT",
 						"header": [
 							{
@@ -252,10 +270,13 @@
 				{
 					"name": "Delete a topic /topics/id",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/topics/javaee",
+						"url": "https://courseapi-spring-boot.herokuapp.com/topics/javaee",
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "Deletes the specific topic"
 					},
 					"response": []
@@ -269,7 +290,7 @@
 				{
 					"name": "All links Actuator",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/actuator",
+						"url": "https://courseapi-spring-boot.herokuapp.com/actuator",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -280,7 +301,7 @@
 				{
 					"name": "Health",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/actuator/health",
+						"url": "https://courseapi-spring-boot.herokuapp.com/actuator/health",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -291,10 +312,47 @@
 				{
 					"name": "Beans Health",
 					"request": {
-						"url": "http://courseapi-spring-boot.herokuapp.com/beans",
+						"url": "https://courseapi-spring-boot.herokuapp.com/beans",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger - Document APIs",
+			"description": "",
+			"item": [
+				{
+					"name": "API-Docs",
+					"request": {
+						"url": "https://courseapi-spring-boot.herokuapp.com/v2/api-docs",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger UI",
+					"request": {
+						"url": "https://courseapi-spring-boot.herokuapp.com/swagger-ui.html",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []

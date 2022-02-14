@@ -8,10 +8,14 @@ Here I am created a CourseAPI complete backend using Spring Boot and used Apache
 
 ### Sample APIs to check the functionalities
 
-- GetAllTopics - http://courseapi-spring-boot.herokuapp.com/topics
-- GetAllCourses for Topic Id "java" - http://courseapi-spring-boot.herokuapp.com/topics/java/courses
+- GetAllTopics - https://courseapi-spring-boot.herokuapp.com/topics
+- GetAllCourses for Topic Id "java" - https://courseapi-spring-boot.herokuapp.com/topics/java/courses
 
-- GetAllLessons for Course Id "java-8"- http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons
+- GetAllLessons for Course Id "java-8"- https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons
+
+- Get API health - https://courseapi-spring-boot.herokuapp.com/actuator/health
+
+- Swagger UI to Test APIs - https://courseapi-spring-boot.herokuapp.com/swagger-ui.html
 
 
 
@@ -110,7 +114,7 @@ Fetching All courses under Topic Id "java" : https://courseapi-spring-boot.herok
 
 
 
-Fetching All lessons under Course Id "java-8" : http://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons
+Fetching All lessons under Course Id "java-8" : https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons
 
 ```json
 [
