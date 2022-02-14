@@ -1,6 +1,6 @@
 # CourseAPI - README
 
-Here I am created a CourseAPI complete backend using Spring Boot and used Apache Derby Database which is embedded in Spring Boot.
+Here I have created a Production grade CourseAPI complete backend using Spring Boot and my own MySQL Database instance.
 
 #### Live Link - [Hosted on Heroku](https://courseapi-spring-boot.herokuapp.com)
 
@@ -15,7 +15,7 @@ Here I am created a CourseAPI complete backend using Spring Boot and used Apache
 
 - Get API health - https://courseapi-spring-boot.herokuapp.com/actuator/health
 
-- Swagger UI to Test APIs - https://courseapi-spring-boot.herokuapp.com/swagger-ui.html
+- **Swagger UI to Test all APIs** - https://courseapi-spring-boot.herokuapp.com/swagger-ui.html
 
 
 
@@ -142,9 +142,9 @@ Fetching All lessons under Course Id "java-8" : https://courseapi-spring-boot.he
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Lombok](https://projectlombok.org/)
-
 - [STS IDE](https://spring.io/tools)
 - [Heroku](https://www.heroku.com/)
 - [MySQL](https://www.mysql.com/)
 - [Git](https://git-scm.com/)
+- [Swagger UI](https://swagger.io/tools/swagger-ui/)
 
