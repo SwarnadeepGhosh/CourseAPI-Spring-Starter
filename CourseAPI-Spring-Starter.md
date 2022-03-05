@@ -1,8 +1,37 @@
 # CourseAPI-Spring-Starter - Tutorial
 
-[TOC]
+### Table of contents
 
-**Prerequisites and Installation**
+- [Prerequisites and Installation](#prerequisites-and-installation)
+- [Creating Spring Boot Project](#creating-spring-boot-project)
+- [Starting a Spring Boot App](#starting-a-spring-boot-app)
+- [Adding a REST Controller](#adding-a-rest-controller)
+- [Returning Objects From Controller](#returning-objects-from-controller)
+- [Behind the Scenes](#behind-the-scenes)
+    - [Bill Of Materials](#bill-of-materials)
+    - [Embedded Servlet Container](#embedded-servlet-container)
+- [Spring MVC- The View Tier](#spring-mvc--the-view-tier)
+- [Topic API - The 1st REST Api we'll build](#topic-api---the-1st-rest-api-well-build)
+- [Creating Business Service](#creating-business-service)
+  - [Getting a specific Topic](#getting-a-specific-topic)
+  - [Adding new resource using POST](#adding-new-resource-using-post)
+  - [Implementing Update using PUT](#implementing-update-using-put)
+  - [Implementing DELETE using DELETE](#implementing-delete-using-delete)
+- [Ways to Start a Spring Boot App](#ways-to-start-a-spring-boot-app)
+- [Using application properties](#using-application-properties)
+- [Spring Data JPA](#spring-data-jpa)
+  - [Creating a Spring Data JPA Repository](#creating-a-spring-data-jpa-repository)
+  - [Making CRUD operations with Repository](#making-crud-operations-with-repository)
+- [Course APIs - Creation](#course-apis---creation)
+- [Adding Entity Relationship and Extending Repository](#adding-entity-relationship-and-extending-repository)
+- [Lesson APIs](#lesson-apis)
+- [Actuator - Monitoring App](#actuator---monitoring-app)
+- [Swagger (Documentation Tool)](#swagger-documentation-tool)
+- [Packaging Production Ready App](#packaging-production-ready-app)
+
+
+
+### Prerequisites and Installation
 
 - STS 4
 - JDK 8 or higher
@@ -978,6 +1007,37 @@ Resources -> Configure Addons ->  [**JawsDB MySQL**](https://elements.heroku.com
   JawsDB MySQL -> Settings -> View Credentials
 
 - We dont need to add the connection details in our application. Heroku will do that intelligently.
+
+
+
+
+
+### Changing DB from MySQL to PostgreSQL
+
+***pom.xml***
+
+```xml
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <scope>runtime</scope>
+</dependency>
+```
+
+***application.properties***
+
+```properties
+spring.jpa.hibernate.ddl-auto:update
+spring.jpa.show-sql: true
+
+# Connecting to Postgres Database
+#spring.datasource.url=jdbc:postgresql://host:port/database
+spring.datasource.url=jdbc:postgresql://free-tier12.aws-ap-south-1.cockroachlabs.cloud:26257/swarna-db-200.defaultdb
+spring.datasource.username=swarnadeep
+spring.datasource.password=<my_password>
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+```
 
 
 
