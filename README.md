@@ -1,6 +1,6 @@
 # CourseAPI - README
 
-Here I have created a Production grade CourseAPI complete backend using Spring Boot and my own MySQL Database instance.
+Here I have created a production grade CourseAPI complete CRUD backend using Spring Boot, JPA, my own PostgreSQL Database instance and hosted it on Heroku.
 
 #### Live Link - [Hosted on Heroku](https://courseapi-spring-boot.herokuapp.com)
 
