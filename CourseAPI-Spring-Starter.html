@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+
+    <title>CourseAPI-Spring-Starter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#courseapi-spring-starter---tutorial"
+          id="toc-courseapi-spring-starter---tutorial">CourseAPI-Spring-Starter
+          - Tutorial</a>
+          <ul>
+          <li><a href="#table-of-contents"
+          id="toc-table-of-contents">Table of contents</a></li>
+          <li><a href="#prerequisites-and-installation"
+          id="toc-prerequisites-and-installation">Prerequisites and
+          Installation</a></li>
+          <li><a href="#creating-spring-boot-project"
+          id="toc-creating-spring-boot-project">Creating Spring Boot
+          Project</a></li>
+          <li><a href="#starting-a-spring-boot-app"
+          id="toc-starting-a-spring-boot-app">Starting a Spring Boot
+          App</a></li>
+          <li><a href="#adding-a-rest-controller"
+          id="toc-adding-a-rest-controller">Adding a REST
+          Controller</a></li>
+          <li><a href="#returning-objects-from-controller"
+          id="toc-returning-objects-from-controller">Returning Objects
+          From Controller</a></li>
+          <li><a href="#behind-the-scenes"
+          id="toc-behind-the-scenes">Behind the Scenes</a></li>
+          <li><a href="#spring-mvc--the-view-tier"
+          id="toc-spring-mvc--the-view-tier">Spring MVC- The View
+          Tier</a></li>
+          <li><a href="#topic-api---the-1st-rest-api-well-build"
+          id="toc-topic-api---the-1st-rest-api-well-build">Topic API -
+          The 1st REST Api we’ll build</a></li>
+          <li><a href="#creating-business-service"
+          id="toc-creating-business-service">Creating Business
+          Service</a></li>
+          <li><a href="#ways-to-start-a-spring-boot-app"
+          id="toc-ways-to-start-a-spring-boot-app">Ways to Start a
+          Spring Boot App</a></li>
+          <li><a href="#using-application-properties"
+          id="toc-using-application-properties">Using application
+          properties</a></li>
+          <li><a href="#spring-data-jpa" id="toc-spring-data-jpa">Spring
+          Data JPA</a></li>
+          <li><a href="#course-apis---creation"
+          id="toc-course-apis---creation">Course APIs -
+          Creation</a></li>
+          <li><a
+          href="#adding-entity-relationship-and-extending-repository"
+          id="toc-adding-entity-relationship-and-extending-repository">Adding
+          Entity Relationship and Extending Repository</a></li>
+          <li><a href="#lesson-apis" id="toc-lesson-apis">Lesson
+          APIs</a></li>
+          <li><a href="#actuator---monitoring-app"
+          id="toc-actuator---monitoring-app">Actuator - Monitoring
+          App</a></li>
+          <li><a href="#swagger-documentation-tool"
+          id="toc-swagger-documentation-tool">Swagger (Documentation
+          Tool)</a></li>
+          <li><a href="#packaging-production-ready-app"
+          id="toc-packaging-production-ready-app">Packaging Production
+          Ready App</a></li>
+          <li><a href="#hosting-in-heroku"
+          id="toc-hosting-in-heroku">Hosting in Heroku</a></li>
+          <li><a href="#changing-db-from-mysql-to-postgresql"
+          id="toc-changing-db-from-mysql-to-postgresql">Changing DB from
+          MySQL to PostgreSQL</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 id="courseapi-spring-starter---tutorial">CourseAPI-Spring-Starter -
+Tutorial</h1>
+<h3 id="table-of-contents">Table of contents</h3>
+<ul>
+<li><a href="#prerequisites-and-installation">Prerequisites and
+Installation</a></li>
+<li><a href="#creating-spring-boot-project">Creating Spring Boot
+Project</a></li>
+<li><a href="#starting-a-spring-boot-app">Starting a Spring Boot
+App</a></li>
+<li><a href="#adding-a-rest-controller">Adding a REST
+Controller</a></li>
+<li><a href="#returning-objects-from-controller">Returning Objects From
+Controller</a></li>
+<li><a href="#behind-the-scenes">Behind the Scenes</a>
+<ul>
+<li><a href="#bill-of-materials">Bill Of Materials</a></li>
+<li><a href="#embedded-servlet-container">Embedded Servlet
+Container</a></li>
+</ul></li>
+<li><a href="#spring-mvc--the-view-tier">Spring MVC- The View
+Tier</a></li>
+<li><a href="#topic-api---the-1st-rest-api-well-build">Topic API - The
+1st REST Api we’ll build</a></li>
+<li><a href="#creating-business-service">Creating Business Service</a>
+<ul>
+<li><a href="#getting-a-specific-topic">Getting a specific
+Topic</a></li>
+<li><a href="#adding-new-resource-using-post">Adding new resource using
+POST</a></li>
+<li><a href="#implementing-update-using-put">Implementing Update using
+PUT</a></li>
+<li><a href="#implementing-delete-using-delete">Implementing DELETE
+using DELETE</a></li>
+</ul></li>
+<li><a href="#ways-to-start-a-spring-boot-app">Ways to Start a Spring
+Boot App</a></li>
+<li><a href="#using-application-properties">Using application
+properties</a></li>
+<li><a href="#spring-data-jpa">Spring Data JPA</a>
+<ul>
+<li><a href="#creating-a-spring-data-jpa-repository">Creating a Spring
+Data JPA Repository</a></li>
+<li><a href="#making-crud-operations-with-repository">Making CRUD
+operations with Repository</a></li>
+</ul></li>
+<li><a href="#course-apis---creation">Course APIs - Creation</a></li>
+<li><a
+href="#adding-entity-relationship-and-extending-repository">Adding
+Entity Relationship and Extending Repository</a></li>
+<li><a href="#lesson-apis">Lesson APIs</a></li>
+<li><a href="#actuator---monitoring-app">Actuator - Monitoring
+App</a></li>
+<li><a href="#swagger-documentation-tool">Swagger (Documentation
+Tool)</a></li>
+<li><a href="#packaging-production-ready-app">Packaging Production Ready
+App</a></li>
+</ul>
+<h3 id="prerequisites-and-installation">Prerequisites and
+Installation</h3>
+<ul>
+<li>STS 4</li>
+<li>JDK 8 or higher</li>
+<li>Maven download and setup path for <code>JAVA_HOME</code>
+,<code>M2_HOME</code>, <code>MAVEN_HOME</code></li>
+<li>Add Maven Bin folder and Java Bin folder in the end of path under
+system variable</li>
+</ul>
+<h3 id="creating-spring-boot-project">Creating Spring Boot Project</h3>
+<ol type="1">
+<li><p>Created a Maven project (Simple project checkbox
+selected)</p></li>
+<li><p>Given proper group/ artifact id and finish</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">groupId</span>&gt;com.swarna.springboot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">artifactId</span>&gt;CourseAPI-Spring-Starter&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">version</span>&gt;0.0.1-SNAPSHOT&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">name</span>&gt;CourseAPI-Spring-Starter&lt;/<span class="kw">name</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">description</span>&gt;CourseAPI-Spring Boot Starter project created took help from Java Brains&lt;/<span class="kw">description</span>&gt;</span></code></pre></div>
+<ol start="3" type="1">
+<li>Added below dependencies for Spring boot</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent --&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">parent</span>&gt;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-parent&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.1.12.RELEASE&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">parent</span>&gt;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependencies</span>&gt;</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web --&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-web&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">version</span>&gt;2.6.1&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">dependency</span>&gt;</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependencies</span>&gt;</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">properties</span>&gt;</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">java.version</span>&gt;1.8&lt;/<span class="kw">java.version</span>&gt;</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">properties</span>&gt;</span></code></pre></div>
+<h4 id="database-er-diagram">Database ER Diagram</h4>
+<figure>
+<img src="Database_ER_diagram.png" alt="Database_ER_diagram.png" />
+<figcaption aria-hidden="true">Database_ER_diagram.png</figcaption>
+</figure>
+<h3 id="starting-a-spring-boot-app">Starting a Spring Boot App</h3>
+<p><strong><em>Startup Steps</em></strong></p>
+<ul>
+<li><p>Sets up Default Configuration</p></li>
+<li><p>Starts Spring Application context</p></li>
+<li><p>Performs class path scan (Using different annotations)</p></li>
+<li><p>Starts Tomcat Server</p></li>
+</ul>
+<ol type="1">
+<li>Created a java class <code>CourseApiApp.java</code> in
+<code>\src\main\java\com\swarna\springboot</code></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">@SpringBootApplication</span> <span class="co">//annotation to tell Spring , this is a Boot Application</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseApiApp <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">// In background, this will start a servlet container and host my application there</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        SpringApplication<span class="op">.</span><span class="fu">run</span><span class="op">(</span>CourseApiApp<span class="op">.</span><span class="fu">class</span><span class="op">,</span> args<span class="op">);</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Now run Spring Boot Application using <strong>Run as =&gt; Run as
+Java Application</strong></p>
+<p>If you got error, <em>“The port may already be in use or the
+connector may be misconfigured”</em>. You have to stop that port.</p>
+<ol type="1">
+<li><p>Find the process ID (PID) for the port (e.g.:
+<strong>8080</strong>)</p>
+<p>On Windows: <code>netstat -ao | find "8080"</code></p>
+<p>Other Platforms other than windows :
+<code>lsof -i:8080</code></p></li>
+<li><p>Kill the process ID you found (e.g.: 20712)</p>
+<p>On Windows: <code>Taskkill /PID  4624 /F</code></p>
+<p>Other Platforms other than windows : <code>kill -9 20712</code> or
+<code>kill 20712</code></p></li>
+</ol>
+<h3 id="adding-a-rest-controller">Adding a REST Controller</h3>
+<p>Controller is responsible for taking http requests and provide
+certain http responses.</p>
+<p>A java class marked with annotations. It has info about</p>
+<ul>
+<li>what url it triggers to.</li>
+<li>what method to run when accessed.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RestController</span> <span class="co">// This will tell Spring that this is a Controller</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> HelloController <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/hello&quot;</span><span class="op">)</span> <span class="co">// This will map the path with the sayHi() function</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">sayHi</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Hi&quot;</span><span class="op">;</span> <span class="co">// We will get &quot;Hi&quot; in http://localhost:8080/hello</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="returning-objects-from-controller">Returning Objects From
+Controller</h3>
+<p>Spring automatically converts REST Controller returning object into
+JSON. We dont have to do anything.</p>
+<p>Created a Topic class named <strong><em>Topic.java</em></strong></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Topic <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> id<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> description<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a> <span class="co">// Generated Constructor using fields and without fields</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Also generated Getters and setters and constructor</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Created a controller named
+<strong><em><code>TopicConntroller.java</code></em></strong> , which
+will return a list of Topics</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RestController</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TopicController <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/topics&quot;</span><span class="op">)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span> <span class="fu">getAllTopics</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;spring&quot;</span><span class="op">,</span><span class="st">&quot;Spring Framework&quot;</span><span class="op">,</span><span class="st">&quot;Spring Framework Description&quot;</span><span class="op">),</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;js&quot;</span><span class="op">,</span><span class="st">&quot;JavaScript&quot;</span><span class="op">,</span><span class="st">&quot;JavaScript Description&quot;</span><span class="op">),</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;java&quot;</span><span class="op">,</span><span class="st">&quot;Core Java&quot;</span><span class="op">,</span><span class="st">&quot;Core Java Description&quot;</span><span class="op">)</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                <span class="op">);</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="behind-the-scenes">Behind the Scenes</h3>
+<h5 id="bill-of-materials">Bill Of Materials</h5>
+<p>BOM stands for Bill Of Materials. <strong>A BOM is a special kind of
+POM that is used to control the versions of a project’s dependencies and
+provide a central place to define and update those
+versions.</strong></p>
+<p>BOM provides the flexibility to add a dependency to our module
+without worrying about the version that we should depend on.</p>
+<h5 id="embedded-servlet-container">Embedded Servlet Container</h5>
+<ul>
+<li>Convenient</li>
+<li>Servet container config is now application config</li>
+<li>Standalone application</li>
+<li>Useful for microservices architecture</li>
+</ul>
+<h3 id="spring-mvc--the-view-tier">Spring MVC- The View Tier</h3>
+<p>A Spring MVC is a Java framework which is used to build web
+applications. It follows the Model-View-Controller design pattern. It
+implements all the basic features of a core spring framework like
+Inversion of Control, Dependency Injection.</p>
+<p>A Spring MVC provides an elegant solution to use MVC in spring
+framework by the help of <strong>DispatcherServlet</strong>. Here,
+<strong>DispatcherServlet</strong> is a class that receives the incoming
+request and maps it to the right resource such as controllers, models,
+and views.</p>
+<figure>
+<img
+src="https://static.javatpoint.com/sppages/images/spring-web-model-view-controller.png"
+alt="Spring MVC Tutorial" />
+<figcaption aria-hidden="true">Spring MVC Tutorial</figcaption>
+</figure>
+<h3 id="topic-api---the-1st-rest-api-well-build">Topic API - The 1st
+REST Api we’ll build</h3>
+<ul>
+<li>Resources: <strong>Topic, Course, Lesson</strong></li>
+<li>A topic can consists of several courses.</li>
+<li>A course can consists of several lessons.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Request Type</th>
+<th>URI</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GET</td>
+<td>/topics</td>
+<td>Get all Topics</td>
+</tr>
+<tr class="even">
+<td>GET</td>
+<td>/topics/id</td>
+<td>Get a specific Topic</td>
+</tr>
+<tr class="odd">
+<td>POST</td>
+<td>/topics</td>
+<td>Create a new Topic</td>
+</tr>
+<tr class="even">
+<td>PUT</td>
+<td>/topics/id</td>
+<td>Updates the topic.</td>
+</tr>
+<tr class="odd">
+<td>DELETE</td>
+<td>/topics/id</td>
+<td>Deletes the topic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="creating-business-service">Creating Business Service</h3>
+<p><strong><span class="citation"
+data-cites="Autowired">@Autowired</span></strong> : Used to tell spring
+to inject Service class dependency whenever required. We don’t have to
+inject manually as like Angular, we just have to define it.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RestController</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TopicController <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Autowired</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> TopicService topicService<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Now we creating Business Service to handle data and rules.</p>
+<p><strong><em>TopicService.java</em></strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Service</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TopicService <span class="op">{</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span>  topics<span class="op">=</span> <span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;spring&quot;</span><span class="op">,</span><span class="st">&quot;Spring Framework&quot;</span><span class="op">,</span><span class="st">&quot;Spring Framework Description&quot;</span><span class="op">),</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;js&quot;</span><span class="op">,</span><span class="st">&quot;JavaScript&quot;</span><span class="op">,</span><span class="st">&quot;JavaScript Description&quot;</span><span class="op">),</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;java&quot;</span><span class="op">,</span><span class="st">&quot;Core Java&quot;</span><span class="op">,</span><span class="st">&quot;Core Java Description&quot;</span><span class="op">)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">);</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span> <span class="fu">getAllTopics</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> topics<span class="op">;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><strong><em>TopicController.java</em></strong></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RestController</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TopicController <span class="op">{</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Autowired</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> TopicService topicService<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/topics&quot;</span><span class="op">)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span> <span class="fu">getAllTopics</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> topicService<span class="op">.</span><span class="fu">getAllTopics</span><span class="op">();</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h4 id="getting-a-specific-topic">Getting a specific Topic</h4>
+<p>Add this in <strong><em>TopicService.java</em></strong></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Topic <span class="fu">getTopic</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">//return topics.stream().filter(t -&gt; t.getId().equals(id)).findFirst().get();</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The above one line code can be replaced by full code below.</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    Topic topic <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>Topic t <span class="op">:</span> topics<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span>t<span class="op">.</span><span class="fu">getId</span><span class="op">().</span><span class="fu">equals</span><span class="op">(</span>id<span class="op">))</span> <span class="op">{</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            topic <span class="op">=</span> t<span class="op">;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> topic<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Add this in <strong><em>TopicController.java</em></strong></p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/topics/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> Topic <span class="fu">getTopic</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span>    </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> topicService<span class="op">.</span><span class="fu">getTopic</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Now, Response I get going into
+<code>http://localhost:8080/topics/spring</code></p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;id&quot;</span><span class="fu">:</span><span class="st">&quot;spring&quot;</span><span class="fu">,</span><span class="dt">&quot;name&quot;</span><span class="fu">:</span><span class="st">&quot;Spring Framework&quot;</span><span class="fu">,</span><span class="dt">&quot;description&quot;</span><span class="fu">:</span><span class="st">&quot;Spring Framework Description&quot;</span><span class="fu">}</span></span></code></pre></div>
+<h4 id="adding-new-resource-using-post">Adding new resource using
+POST</h4>
+<p>First we need to use mutable string i.e. ArrayList instead of
+Arrays.List. Unless we will get 500 Error.</p>
+<p>Update the List in <strong><em>TopicService.java</em></strong></p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span> topics <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;(</span><span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;spring&quot;</span><span class="op">,</span> <span class="st">&quot;Spring Framework&quot;</span><span class="op">,</span> <span class="st">&quot;Spring Framework Description&quot;</span><span class="op">),</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;js&quot;</span><span class="op">,</span> <span class="st">&quot;JavaScript&quot;</span><span class="op">,</span> <span class="st">&quot;JavaScript Description&quot;</span><span class="op">),</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span><span class="st">&quot;java&quot;</span><span class="op">,</span> <span class="st">&quot;Core Java&quot;</span><span class="op">,</span> <span class="st">&quot;Core Java Description&quot;</span><span class="op">)));</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">//Add below code at the end </span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">addTopic</span><span class="op">(</span>Topic topic<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    topics<span class="op">.</span><span class="fu">add</span><span class="op">(</span>topic<span class="op">);</span> <span class="co">//This will add a topic into existing ArrayList topics</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Add this in <strong><em>TopicController.java</em></strong> to send a
+POST request.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">POST</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics&quot;</span><span class="op">)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">addTopic</span><span class="op">(</span><span class="at">@RequestBody</span> Topic topic <span class="op">)</span> <span class="op">{</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    topicService<span class="op">.</span><span class="fu">addTopic</span><span class="op">(</span>topic<span class="op">);</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>To test this, send</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="er">POST</span> <span class="er">URL</span> <span class="er">:</span> <span class="er">http://localhost:8080/topics</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="er">Headers:</span> <span class="er">Content-Type</span> <span class="er">(application/json)</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="er">Body</span> <span class="er">:</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;javaee&quot;</span><span class="fu">,</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Java Enterprise&quot;</span><span class="fu">,</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Java Enterprise Description&quot;</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="er">Response</span> <span class="er">:</span> <span class="er">200</span> <span class="er">OK</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="er">Now</span> <span class="er">send</span> <span class="er">GET</span> <span class="er">:</span> <span class="er">http://localhost:8080/topics</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="er">You</span> <span class="er">will</span> <span class="er">get</span> <span class="er">the</span> <span class="er">added</span> <span class="er">Topic</span> <span class="er">in</span> <span class="er">topics</span> <span class="er">List</span></span></code></pre></div>
+<h4 id="implementing-update-using-put">Implementing Update using
+PUT</h4>
+<p>Add this in <strong><em>TopicController.java</em></strong> to send a
+PUT request.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">PUT</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">updateTopic</span><span class="op">(</span><span class="at">@RequestBody</span> Topic topic <span class="op">,</span> <span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    topicService<span class="op">.</span><span class="fu">updateTopic</span><span class="op">(</span>id<span class="op">,</span> topic<span class="op">);</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Add this in <strong><em>TopicService.java</em></strong> to UPDATE</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">updateTopic</span><span class="op">(</span><span class="bu">String</span> id<span class="op">,</span> Topic topic<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> topics<span class="op">.</span><span class="fu">size</span><span class="op">();</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        Topic t <span class="op">=</span> topics<span class="op">.</span><span class="fu">get</span><span class="op">(</span>i<span class="op">);</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span>t<span class="op">.</span><span class="fu">getId</span><span class="op">().</span><span class="fu">equals</span><span class="op">(</span>id<span class="op">))</span> <span class="op">{</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>            topics<span class="op">.</span><span class="fu">set</span><span class="op">(</span>i<span class="op">,</span> topic<span class="op">);</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span>   </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>To test this, send</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="er">PUT</span> <span class="er">URL</span> <span class="er">:</span> <span class="er">http://localhost:8080/topics/js</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="er">Headers:</span> <span class="er">Content-Type</span> <span class="er">(application/json)</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="er">Body</span> <span class="er">:</span> </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;js&quot;</span><span class="fu">,</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Updated JavaScript&quot;</span><span class="fu">,</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Updated JavaScript Description&quot;</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="er">Response</span> <span class="er">:</span> <span class="er">200</span> <span class="er">OK</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="er">Now</span> <span class="er">send</span> <span class="er">GET</span> <span class="er">:</span> <span class="er">http://localhost:8080/topics</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="er">You</span> <span class="er">will</span> <span class="er">get</span> <span class="er">the</span> <span class="er">updated</span> <span class="er">Topic</span> <span class="er">in</span> <span class="er">topics</span> <span class="er">List</span></span></code></pre></div>
+<h4 id="implementing-delete-using-delete">Implementing DELETE using
+DELETE</h4>
+<p>Add this in <strong><em>TopicController.java</em></strong> to send a
+DELETE request.</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">DELETE</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">deleteTopic</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    topicService<span class="op">.</span><span class="fu">deleteTopic</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Add this in <strong><em>TopicService.java</em></strong> to DELETE</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">deleteTopic</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    topics<span class="op">.</span><span class="fu">removeIf</span><span class="op">(</span>t <span class="op">-&gt;</span> t<span class="op">.</span><span class="fu">getId</span><span class="op">().</span><span class="fu">equals</span><span class="op">(</span>id<span class="op">));</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>To test this, send</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="er">DELETE</span> <span class="er">URL</span> <span class="er">:</span> <span class="er">http://localhost:8080/topics/javaee</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="er">Headers:</span> <span class="er">Not</span> <span class="er">Required</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="er">Body</span> <span class="er">:</span> <span class="er">Not</span> <span class="er">Required</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="er">Response</span> <span class="er">:</span> <span class="er">200</span> <span class="er">OK</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="er">Now</span> <span class="er">send</span> <span class="er">GET</span> <span class="er">:</span> <span class="er">http://localhost:8080/topics</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="er">You</span> <span class="er">will</span> <span class="er">get</span> <span class="er">the</span> <span class="er">updated</span> <span class="er">Topics</span> <span class="er">in</span> <span class="er">topics</span> <span class="er">List</span></span></code></pre></div>
+<h3 id="ways-to-start-a-spring-boot-app">Ways to Start a Spring Boot
+App</h3>
+<ul>
+<li><p><a href="https://start.spring.io/">Spring Initializr</a></p></li>
+<li><p><a href="https://www.baeldung.com/spring-boot-cli">Spring Boot
+CLI</a></p></li>
+<li><p><a href="https://spring.io/tools">STS IDE</a></p></li>
+</ul>
+<h3 id="using-application-properties">Using application properties</h3>
+<p>Created <code>application.properties</code> in src/main/resources</p>
+<pre class="properties"><code>server.port=8080
+
+#used to ignore some error message from apache derby DB
+spring.jpa.hibernate.ddl-auto=update</code></pre>
+<p>Now the app will start using port 8081</p>
+<p>Here are some good resources for application.properties file.</p>
+<ul>
+<li><p><a
+href="https://www.docs4dev.com/docs/en/spring-boot/2.1.1.RELEASE/reference/common-application-properties.html">docs4dev.com</a></p></li>
+<li><p><a
+href="https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html">Spring
+Documentation</a></p></li>
+</ul>
+<h3 id="spring-data-jpa">Spring Data JPA</h3>
+<p>To connect our server with database , we need to use Spring Data
+JPA.</p>
+<p>JPA = JAVA Persistence API</p>
+<p>Object - Relational Mapping</p>
+<p>Added Spring Web, <strong>Data JPA</strong> and <strong>Apache
+Derby</strong> DB as Database.</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependencies</span>&gt;</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-data-jpa&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dependency</span>&gt;</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-web&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dependency</span>&gt;</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">groupId</span>&gt;org.apache.derby&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">artifactId</span>&gt;derby&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">scope</span>&gt;runtime&lt;/<span class="kw">scope</span>&gt;</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">dependency</span>&gt;</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">dependencies</span>&gt;</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">build</span>&gt;</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">plugins</span>&gt;</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plugin</span>&gt;</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">artifactId</span>&gt;spring-boot-maven-plugin&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">plugin</span>&gt;</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">plugins</span>&gt;</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">build</span>&gt;</span></code></pre></div>
+<h4 id="creating-a-spring-data-jpa-repository">Creating a Spring Data
+JPA Repository</h4>
+<p>Added <strong><span class="citation"
+data-cites="Entity">@Entity</span></strong> and <strong><span
+class="citation" data-cites="Id">@Id</span></strong> in
+<strong><em>Topic.java</em></strong></p>
+<p><span class="citation" data-cites="Entity">@Entity</span> - Used for
+creating a entity(or Table) named Topic , which having 3 columns - id,
+name, description</p>
+<p><span class="citation" data-cites="Id">@Id</span> - specify id as a
+primary key of the table.</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Entity</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Topic <span class="op">{</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Id</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> id<span class="op">;</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> description<span class="op">;</span></span></code></pre></div>
+<p>Created a interface <strong><em>TopicRepository.java</em></strong>
+which extends <strong><em>CrudRepository</em></strong> which is having
+all essential methods for CRUD operations.</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">data</span><span class="op">.</span><span class="im">repository</span><span class="op">.</span><span class="im">CrudRepository</span><span class="op">;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">interface</span> TopicRepository <span class="kw">extends</span> CrudRepository<span class="op">&lt;</span>Topic<span class="op">,</span> <span class="bu">String</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">//getAllTopics()</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">//getTopic(String id)</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">//addTopic(Topic topic )</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">//updateTopic(@Topic topic ,String id) </span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">//deleteTopic(String id)</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Above methods will be handled by CrudRepository</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h4 id="making-crud-operations-with-repository">Making CRUD operations
+with Repository</h4>
+<ul>
+<li><p>First in <strong><em>TopicService.java</em></strong> , we have to
+inject TopicRepository using <em><span class="citation"
+data-cites="Autowired">@Autowired</span></em></p></li>
+<li><p>Delete topics list initialization line.</p></li>
+<li><p>Rewrite code within various methods for GET, POST, PUT,
+DELETE</p></li>
+</ul>
+<p><strong><em>TopicService.java</em></strong></p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Service</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TopicService <span class="op">{</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Autowired</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> TopicRepository topicRepository<span class="op">;</span> </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">//  private List&lt;Topic&gt; topics = new ArrayList&lt;&gt;( Arrays.asList(new Topic(&quot;spring&quot;, &quot;Spring Framework&quot;, &quot;Spring Framework Description&quot;), new Topic(&quot;js&quot;, &quot;JavaScript&quot;, &quot;JavaScript Description&quot;),new Topic(&quot;java&quot;, &quot;Core Java&quot;, &quot;Core Java Description&quot;)));</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span> <span class="fu">getAllTopics</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">List</span><span class="op">&lt;</span>Topic<span class="op">&gt;</span> topics <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>        topicRepository<span class="op">.</span><span class="fu">findAll</span><span class="op">().</span><span class="fu">forEach</span><span class="op">(</span>t <span class="op">-&gt;</span> topics<span class="op">.</span><span class="fu">add</span><span class="op">(</span>t<span class="op">));</span> <span class="co">//findAll returns iterable</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> topics<span class="op">;</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Optional<span class="op">&lt;</span>Topic<span class="op">&gt;</span> <span class="fu">getTopic</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> topicRepository<span class="op">.</span><span class="fu">findById</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">addTopic</span><span class="op">(</span>Topic topic<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>        topicRepository<span class="op">.</span><span class="fu">save</span><span class="op">(</span>topic<span class="op">);</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">updateTopic</span><span class="op">(</span><span class="bu">String</span> id<span class="op">,</span> Topic topic<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>        topicRepository<span class="op">.</span><span class="fu">save</span><span class="op">(</span>topic<span class="op">);</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">deleteTopic</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span>    </span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>        topicRepository<span class="op">.</span><span class="fu">deleteById</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="course-apis---creation">Course APIs - Creation</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 52%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Request Type</th>
+<th>URI</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GET</td>
+<td>/topics/{topicId}/courses</td>
+<td>Get all Courses</td>
+</tr>
+<tr class="even">
+<td>GET</td>
+<td>/topics/{topicId}/courses/{courseId}</td>
+<td>Get a specific Course</td>
+</tr>
+<tr class="odd">
+<td>POST</td>
+<td>/topics/{topicId}/courses</td>
+<td>Create a new Course</td>
+</tr>
+<tr class="even">
+<td>PUT</td>
+<td>/topics/{topicId}/courses/{courseId}</td>
+<td>Updates the Course.</td>
+</tr>
+<tr class="odd">
+<td>DELETE</td>
+<td>/topics/{topicId}/courses/{courseId}</td>
+<td>Deletes the Course</td>
+</tr>
+</tbody>
+</table>
+<p>Copied full package and pasted as</p>
+<p>Renamed Topic to Course accordingly in 4 files. Renamed the URI
+properly.</p>
+<p>Changes of <strong><em>Course.java</em></strong> : added topic as a
+column in Course table.</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Entity</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Course <span class="op">{</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> Topic topic<span class="op">;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Course</span><span class="op">(</span><span class="bu">String</span> id<span class="op">,</span> <span class="bu">String</span> name<span class="op">,</span> <span class="bu">String</span> description<span class="op">,</span><span class="bu">String</span> topicId<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">super</span><span class="op">();</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">id</span> <span class="op">=</span> id<span class="op">;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">description</span> <span class="op">=</span> description<span class="op">;</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">topic</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span>topicId<span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">);</span> </span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">//This is just for convinience and not really required. creating this to make it easy to create new Course Objects with given topic</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Topic <span class="fu">getTopic</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> topic<span class="op">;</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setTopic</span><span class="op">(</span>Topic topic<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">topic</span> <span class="op">=</span> topic<span class="op">;</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<p>Changes of <strong><em>CourseService.java</em></strong></p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Service</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseService <span class="op">{</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Autowired</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> CourseRepository courseRepository<span class="op">;</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">getAllCourses</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">List</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> courses <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        courseRepository<span class="op">.</span><span class="fu">findAll</span><span class="op">().</span><span class="fu">forEach</span><span class="op">(</span>c <span class="op">-&gt;</span> courses<span class="op">.</span><span class="fu">add</span><span class="op">(</span>c<span class="op">));</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> courses<span class="op">;</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Optional<span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">getCourse</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> courseRepository<span class="op">.</span><span class="fu">findById</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">addCourse</span><span class="op">(</span>Course course<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        courseRepository<span class="op">.</span><span class="fu">save</span><span class="op">(</span>course<span class="op">);</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">updateCourse</span><span class="op">(</span>Course course<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>        courseRepository<span class="op">.</span><span class="fu">save</span><span class="op">(</span>course<span class="op">);</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">deleteCourse</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        courseRepository<span class="op">.</span><span class="fu">deleteById</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Changes of <strong><em>CourseController.java</em></strong></p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="at">@RestController</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseController <span class="op">{</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Autowired</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> CourseService courseService<span class="op">;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/topics/{id}/courses&quot;</span><span class="op">)</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">getAllCourses</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> courseService<span class="op">.</span><span class="fu">getAllCourses</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/topics/{topicId}/courses/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Optional<span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">getCourse</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span>    </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> courseService<span class="op">.</span><span class="fu">getCourse</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">POST</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics/{topicId}/courses&quot;</span><span class="op">)</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">addCourse</span><span class="op">(</span><span class="at">@RequestBody</span> Course course<span class="op">,</span> <span class="at">@PathVariable</span> <span class="bu">String</span> topicId<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">//Creating a new Topic object with the given name {topicId}</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>        course<span class="op">.</span><span class="fu">setTopic</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span>topicId<span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">));</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>        courseService<span class="op">.</span><span class="fu">addCourse</span><span class="op">(</span>course<span class="op">);</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">PUT</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics/{topicId}/courses/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">updateTopic</span><span class="op">(</span><span class="at">@RequestBody</span> Course course <span class="op">,</span> <span class="at">@PathVariable</span> <span class="bu">String</span> topicId<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">//Creating a new Topic object with the given name {topicId}</span></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>        course<span class="op">.</span><span class="fu">setTopic</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Topic</span><span class="op">(</span>topicId<span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">));</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>        courseService<span class="op">.</span><span class="fu">updateCourse</span><span class="op">(</span>course<span class="op">);</span></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">DELETE</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics/{topicId}/courses/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">deleteCourse</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>        courseService<span class="op">.</span><span class="fu">deleteCourse</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="adding-entity-relationship-and-extending-repository">Adding
+Entity Relationship and Extending Repository</h3>
+<ul>
+<li>Many Courses are linked to same Topic. So this is Many Courses to
+one Topic relationship.</li>
+</ul>
+<p><strong><em>Course.java</em></strong></p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="at">@ManyToOne</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> Topic topic<span class="op">;</span></span></code></pre></div>
+<ul>
+<li><strong><em>CrudRepository</em></strong> will automatically takes
+the portion after <strong>findBy</strong> and search if there is a
+variable match in Course.java, If yes, then it will implement a method
+which will find all courses by name.</li>
+</ul>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">findByName</span><span class="op">(</span><span class="bu">String</span> name<span class="op">);</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">//This will work for all string properties.</span></span></code></pre></div>
+<ul>
+<li>If we want to filter by Topic Id, this not work, because we Topic is
+a class at its own. So we have to tell spring go in between Topic Class
+and take its id.</li>
+</ul>
+<p><strong>findByTopicId = findBy (Syntax for CrudRepository) +
+Topic(ClassName) + Id(Property Name)</strong> //CrudRepo will
+automatically implement this.</p>
+<p><strong>CourseRepository.java</strong> – we need only define
+<em>findByTopicId</em>(String topicId)</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">findByTopicId</span><span class="op">(</span><span class="bu">String</span> topicId<span class="op">);</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Spring JPA will automatically implement this in background</span></span></code></pre></div>
+<p>To get all the courses under a specific topic, edit
+<strong>CourseService.java</strong></p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="fu">getAllCourses</span><span class="op">(</span><span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">//      List&lt;Course&gt; courses = new ArrayList&lt;&gt;();</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//      courseRepository.findAll().forEach(c -&gt; courses.add(c));</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">//      return courses;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> courseRepository<span class="op">.</span><span class="fu">findByTopicId</span><span class="op">(</span>id<span class="op">);</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="lesson-apis">Lesson APIs</h3>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 62%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Request Type</th>
+<th>URI</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GET</td>
+<td>/topics/{topicId}/courses/{courseId}/lessons</td>
+<td>Get all Lessons</td>
+</tr>
+<tr class="even">
+<td>GET</td>
+<td>/topics/{topicId}/courses/{courseId}/lessons/{lessonId}</td>
+<td>Get a specific Lesson</td>
+</tr>
+<tr class="odd">
+<td>POST</td>
+<td>/topics/{topicId}/courses/{courseId}/lessons</td>
+<td>Create a new Lesson</td>
+</tr>
+<tr class="even">
+<td>PUT</td>
+<td>/topics/{topicId}/courses/{courseId}/lessons/{lessonId}</td>
+<td>Updates the Lesson.</td>
+</tr>
+<tr class="odd">
+<td>DELETE</td>
+<td>/topics/{topicId}/courses/{courseId}/lessons/{lessonId}</td>
+<td>Deletes the Lesson</td>
+</tr>
+</tbody>
+</table>
+<p>Used Lombok in <strong><em>Lesson.java</em></strong> to avoid
+unnecessary boilerplate code.</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span><span class="im"> com</span><span class="op">.</span><span class="im">swarna</span><span class="op">.</span><span class="im">courseapi</span><span class="op">.</span><span class="im">lesson</span><span class="op">;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="at">@Entity</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="at">@Data</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="at">@NoArgsConstructor</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="at">@AllArgsConstructor</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="at">@Builder</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Lesson <span class="op">{</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Id</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> id<span class="op">;</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> description<span class="op">;</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">@ManyToOne</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> Course course<span class="op">;</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Changed the <strong><em>LessonController.java</em></strong> ,
+<strong><em>LessonService.java</em></strong> and
+<strong><em>LessonRepository.java</em></strong> accordingly.</p>
+<p>Visit below address to see all the latest changes for these
+files.</p>
+<h3 id="actuator---monitoring-app">Actuator - Monitoring App</h3>
+<p>Monitoring our app, gathering metrics, understanding traffic, or the
+state of our database become trivial with this dependency. Actuator is a
+production-grade monitoring tool</p>
+<p>Actuator is mainly used to <strong>expose operational information
+about the running application</strong> — health, metrics, info, dump,
+env, etc. It uses HTTP endpoints or JMX beans to enable us to interact
+with it.</p>
+<p>Adding to <strong><em>POM.xml</em></strong></p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-actuator&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<p><strong>Actuator Links</strong></p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/actuator</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/actuator/health</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/beans</span></span></code></pre></div>
+<h3 id="swagger-documentation-tool">Swagger (Documentation Tool)</h3>
+<p>Swagger is an Interface Description Language for describing RESTful
+APIs expressed using JSON. Swagger is used together with a set of
+open-source software tools to design, build, document, and use RESTful
+web services. Swagger includes automated documentation, code generation,
+and test-case generation. It used for -</p>
+<ul>
+<li>Develop APIs</li>
+<li>Interact with APIs</li>
+<li>Swagger UI - Document APIs (Most Important feature)</li>
+</ul>
+<p><strong>Adding Swagger to Spring Boot</strong></p>
+<ul>
+<li>Getting swagger 2 Spring Dependency. For now, we need to use Spring
+boot 2.5.2 , else it will give error in runtime.</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">parent</span>&gt;</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-parent&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.5.2&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">parent</span>&gt;</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Production Grade API Documentaion Tool --&gt;</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;io.springfox&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;springfox-swagger2&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.9.2&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<ul>
+<li>Enabling Swagger in code</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="at">@SpringBootApplication</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="at">@EnableSwagger2</span>  <span class="co">// Enabling Swagger so that it can run</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseApiApp <span class="op">{</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        SpringApplication<span class="op">.</span><span class="fu">run</span><span class="op">(</span>CourseApiApp<span class="op">.</span><span class="fu">class</span><span class="op">,</span> args<span class="op">);</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Now you can access swagger at :
+http://localhost:8080/swagger-ui.html</p>
+<ul>
+<li>Configuring Swagger</li>
+<li>Adding Details as annotations to APIs</li>
+</ul>
+<h3 id="packaging-production-ready-app">Packaging Production Ready
+App</h3>
+<p>There is a line in <code>pom.xml</code>. You can choose the packaging
+format. JAR dosent need to run on Servlet container. But WAR need
+servlet container to run.</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">packaging</span>&gt;jar&lt;/<span class="kw">packaging</span>&gt;</span></code></pre></div>
+<p>To package the Spring Boot app , go to project folder ,</p>
+<ol type="1">
+<li><p>list all files and make sure you can see pom.xml</p></li>
+<li><div class="sourceCode" id="cb40"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">swarna@swarna</span> MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter <span class="er">(</span><span class="ex">master</span><span class="kw">)</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">$</span> mvn clean install</span></code></pre></div></li>
+<li><p>jar will be created in
+<code>target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar</code></p></li>
+</ol>
+<p>You can run the jar file in any <em>java installed environment</em>
+using :</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">swarna@swarna</span> MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter <span class="er">(</span><span class="ex">master</span><span class="kw">)</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> java <span class="at">-jar</span> target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar</span></code></pre></div>
+<h3 id="hosting-in-heroku">Hosting in Heroku</h3>
+<p>Heroku is a popular platform for hosting all types of applications.
+There is a Free plan for personal projects also.</p>
+<p>In existing Git repo, we just need to Login to heroku, add remote and
+push our changes</p>
+<p><strong>Install the Heroku CLI</strong></p>
+<p>Download and install the <a
+href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku
+CLI</a>.</p>
+<p>If you haven’t already, log in to your Heroku account and follow the
+prompts to create a new SSH public key.</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku login</span></code></pre></div>
+<p><strong>Clone the repository</strong> (You can ignore this step if
+you already have git repo initialised)</p>
+<p>Use Git to clone courseapi-spring-boot’s source code to your local
+machine.</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku git:clone <span class="at">-a</span> courseapi-spring-boot </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd courseapi-spring-boot</span></code></pre></div>
+<h4 id="adding-heroku-remote"><strong>Adding Heroku Remote</strong></h4>
+<p><strong>For New App</strong></p>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku create <span class="at">-a</span> example-app</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Creating</span> app... done, ⬢ example-app</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ex">https://thawing-inlet-61413.herokuapp.com/</span> <span class="kw">|</span> <span class="ex">https://git.heroku.com/example-app.git</span></span></code></pre></div>
+<p>You can use the <code>git remote</code> command to confirm that a
+remote named <code>heroku</code> has been set for your app:</p>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote <span class="at">-v</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">heroku</span>  https://git.heroku.com/example-app.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">heroku</span>  https://git.heroku.com/example-app.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code></pre></div>
+<p><strong>For an Existing App</strong></p>
+<p>Add a remote to your local repository with the
+<code>heroku git:remote</code> command. All you need is your Heroku
+app’s name:</p>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku git:remote <span class="at">-a</span> example-app</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> git remote heroku to https://git.heroku.com/example-app.git</span></code></pre></div>
+<h4 id="deploy-in-heroku">Deploy in heroku</h4>
+<p>Make some changes to the code you just cloned and deploy them to
+Heroku using Git.</p>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add .</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-am</span> <span class="st">&quot;make it better&quot;</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push heroku master</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku open       <span class="at">-</span><span class="op">&gt;</span> to open live application in default browser</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku logs <span class="at">-t</span>    <span class="at">-</span><span class="op">&gt;</span> to see live logs</span></code></pre></div>
+<h4 id="adding-database-addons">Adding Database Addons</h4>
+<p>We can choose db instance from a large addon library for heroku
+app.</p>
+<p>For MySQL go to Resources -&gt; Configure Addons , we can choose <a
+href="https://elements.heroku.com/addons/jawsdb"><strong>JawsDB
+MySQL</strong></a> . There is also a free plan for this.</p>
+<p>Resources -&gt; Configure Addons -&gt; <a
+href="https://elements.heroku.com/addons/jawsdb"><strong>JawsDB
+MySQL</strong></a> -&gt; Install JawsDB MySQL -&gt; Select the app to
+provision.</p>
+<ul>
+<li><p>To see database connection details , from the resources page,
+click on</p>
+<p>JawsDB MySQL -&gt; Settings -&gt; View Credentials</p></li>
+<li><p>We dont need to add the connection details in our application.
+Heroku will do that intelligently.</p></li>
+</ul>
+<h3 id="changing-db-from-mysql-to-postgresql">Changing DB from MySQL to
+PostgreSQL</h3>
+<p><strong><em>pom.xml</em></strong></p>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.postgresql&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;postgresql&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">scope</span>&gt;runtime&lt;/<span class="kw">scope</span>&gt;</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<p><strong><em>application.properties</em></strong></p>
+<pre class="properties"><code>spring.jpa.hibernate.ddl-auto:update
+spring.jpa.show-sql: true
+
+# Connecting to Postgres Database
+#spring.datasource.url=jdbc:postgresql://host:port/database
+spring.datasource.url=jdbc:postgresql://free-tier12.aws-ap-south-1.cockroachlabs.cloud:26257/swarna-db-200.defaultdb
+spring.datasource.username=swarnadeep
+spring.datasource.password=&lt;my_password&gt;
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

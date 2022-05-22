@@ -80,6 +80,12 @@
 
 
 
+#### Database ER Diagram
+
+![Database_ER_diagram.png](Database_ER_diagram.png)
+
+
+
 ### Starting a Spring Boot App
 
 ***Startup Steps***
