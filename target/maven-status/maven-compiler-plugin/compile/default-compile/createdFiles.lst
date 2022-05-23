@@ -1,4 +1,5 @@
 com\swarna\courseapi\course\CourseController.class
+com\swarna\courseapi\config\CacheConfig.class
 com\swarna\courseapi\CourseApiApp.class
 com\swarna\courseapi\topic\TopicRepository.class
 com\swarna\courseapi\topic\TopicService.class

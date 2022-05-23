@@ -82,8 +82,7 @@
 
 #### Database ER Diagram
 
-![Database_ER_diagram.png](Database_ER_diagram.png)
-
+![Database_ER_diagram.png](images/Database_ER_diagram.png)
 
 
 ### Starting a Spring Boot App
@@ -817,88 +816,9 @@ Visit below address to see all the latest changes for these files.
 
 
 
-### Actuator - Monitoring App
-
-Monitoring our app, gathering metrics, understanding traffic, or the state of our database become trivial with this dependency. Actuator is a production-grade monitoring tool
-
-Actuator is mainly used to **expose operational information about the running application** — health, metrics, info, dump, env, etc. It uses HTTP endpoints or JMX beans to enable us to interact with it.
-
-Adding to ***POM.xml***
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-```
-
-**Actuator Links** 
-
-```json
-http://localhost:8080/actuator
-http://localhost:8080/actuator/health
-http://localhost:8080/beans
-```
 
 
-
-
-
-### Swagger (Documentation Tool)
-
-Swagger is an Interface Description Language for describing RESTful APIs expressed using JSON. Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services. Swagger includes automated documentation, code generation, and test-case generation. It used for - 
-
-- Develop APIs
-- Interact with APIs
-- Swagger UI - Document APIs (Most Important feature)
-
-
-
-**Adding Swagger to Spring Boot** 
-
-- Getting swagger 2 Spring Dependency. For now, we need to use Spring boot 2.5.2 , else it will give error in runtime.
-
-```xml
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.2</version>
-</parent>
-...
-<!-- Production Grade API Documentaion Tool -->
-<dependency>
-    <groupId>io.springfox</groupId>
-    <artifactId>springfox-swagger2</artifactId>
-    <version>2.9.2</version>
-</dependency>
-```
-
-
-
-- Enabling Swagger in code
-
-```java
-@SpringBootApplication 
-@EnableSwagger2  // Enabling Swagger so that it can run
-public class CourseApiApp {
-	public static void main(String[] args) {
-		SpringApplication.run(CourseApiApp.class, args);
-	}
-}
-```
-
-
-
-Now you can access swagger at : http://localhost:8080/swagger-ui.html
-
-- Configuring Swagger
-- Adding Details as annotations to APIs
-
-
-
-
-
-### Packaging Production Ready App
+### Packaging PROD-ready App
 
 There is a line in `pom.xml`. You can choose the packaging format. JAR dosent need to run on Servlet container. But WAR need servlet container to run.
 
@@ -1046,4 +966,233 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialec
 ```
 
 
+
+### Actuator - Monitoring
+
+Monitoring our app, gathering metrics, understanding traffic, or the state of our database become trivial with this dependency. Actuator is a production-grade monitoring tool
+
+Actuator is mainly used to **expose operational information about the running application** — health, metrics, info, dump, env, etc. It uses HTTP endpoints or JMX beans to enable us to interact with it.
+
+Adding to ***POM.xml***
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+**Actuator Links** 
+
+```json
+http://localhost:8080/actuator
+http://localhost:8080/actuator/health
+http://localhost:8080/beans
+```
+
+
+
+
+
+### Swagger Documentation
+
+Swagger is an Interface Description Language for describing RESTful APIs expressed using JSON. Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services. Swagger includes automated documentation, code generation, and test-case generation. It used for - 
+
+- Develop APIs
+- Interact with APIs
+- Swagger UI - Document APIs (Most Important feature)
+
+
+
+**Adding Swagger to Spring Boot** 
+
+- Getting swagger 2 Spring Dependency. For now, we need to use Spring boot 2.5.2 , else it will give error in runtime.
+
+```xml
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.2</version>
+</parent>
+...
+<!-- Production Grade API Documentaion Tool -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+```
+
+
+
+- Enabling Swagger in code
+
+```java
+@SpringBootApplication 
+@EnableSwagger2  // Enabling Swagger so that it can run
+public class CourseApiApp {
+	public static void main(String[] args) {
+		SpringApplication.run(CourseApiApp.class, args);
+	}
+}
+```
+
+
+
+Now you can access swagger at : http://localhost:8080/swagger-ui.html
+
+- Configuring Swagger
+- Adding Details as annotations to APIs
+
+
+
+
+
+
+
+### Logging by SLF4j
+
+***application.properties***
+
+```properties
+############### Logging ###############
+logging.file.name=logs/application.log
+logging.level.root=INFO,ERROR,DEBUG
+# Log Level for springframework (info, error, debug etc)
+#logging.level.org.springframework = error
+# Log Level for Specific Controller
+#logging.level.com.swarna.todoFullStack.todo = error
+```
+
+***TopicController.java***
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+// defining LOGGER 
+private static final Logger LOGGER = LoggerFactory.getLogger(TopicController.class);
+
+// using Logger within method 
+LOGGER.info("Fetching one topic for particular id " +id);
+```
+
+Output file : **`logs\application.log`**
+
+```log
+
+```
+
+##### Rolling Log
+
+Spring boot automatic roll its log files. Lets say `logging.file.name=logs/application.log` , then it will make a `.gz` file with the previous day's log and save it in same folder with name : `application.log.2022-05-22.0.gz`
+
+
+
+### Caching by Hazlecast
+
+Caching is a process of storing the objects that are converted from database records into a temporary memory location so that when the client reads the same exact data the orm tools need not go against the database.
+
+To enable caching for our applications Spring boot uses third party cash providers like Hazelcast or EH cache or JBoss cache. Cache Hazelcast is a popular one and we'll use that.
+
+#### Steps 
+1. Add dependencies - SpringBoot and Hazlecast
+  ```xml
+  <dependency>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-cache</artifactId>
+  </dependency>
+  <dependency>
+  	<groupId>com.hazelcast</groupId>
+  	<artifactId>hazelcast</artifactId>
+  </dependency>
+  <dependency>
+  	<groupId>com.hazelcast</groupId>
+  	<artifactId>hazelcast-spring</artifactId>
+  </dependency>
+  ```
+
+2. Create Cache Configuration and we need to serialize model class also.
+
+   **`com\swarna\courseapi\config\CacheConfig.java`**
+
+   ```java
+   package com.swarna.courseapi;
+   import org.springframework.context.annotation.Bean;
+   import org.springframework.context.annotation.Configuration;
+   import com.hazelcast.config.Config;
+   import com.hazelcast.config.MapConfig;
+   
+   @Configuration
+   public class CacheConfig {
+   	// @Bean
+   	public Config cacheConfig() {
+   		return new Config()
+               .setInstanceName("hazle-instance") // instance name for caching
+               .addMapConfig(new MapConfig() // Adding one cache, we can configure as many cache as we want
+                         .setName("topic-cache") // cache will be saved with this name
+                         .setTimeToLiveSeconds(3000)); // cache will be evicted after 5 minutes
+   	}
+   }
+   ```
+
+   ***Topic.java*** - Serializing model class also.
+
+   ```java
+   import java.io.Serializable;
+   ...
+   public class Topic implements Serializable {
+   	private static final long serialVersionUID = 1L;
+   	...
+   }
+   ```
+
+   
+
+3. Enable and user caching - `@EnableCaching`, `@Cacheable("cache-name")` and `@Transactional(readOnly = true)` in Controller method.
+
+   ***CourseApiApp.java*** - Enabling cashing in `main()` method.
+
+   ```java
+   import org.springframework.cache.annotation.EnableCaching;
+   ...
+   @EnableCaching
+   public class CourseApiApp {
+   	public static void main(String[] args) {
+   		SpringApplication.run(TodoFullStackApplication.class, args);
+   	}
+   }
+   ```
+
+   ***TopicController.java*** - Adding Cacheable and Transactional
+
+   ```java
+   import org.springframework.cache.annotation.Cacheable;
+   import org.springframework.transaction.annotation.Transactional;
+   ...
+   	@RequestMapping("/topics/{id}")
+   	@Transactional(readOnly = true) // True for select, for update/insert, false for default
+       @Cacheable("topic-cache")
+   	public Optional<Topic> getTopic(@PathVariable String id) { ... }
+   }
+   ```
+
+   
+
+4. Evict cache method - by what time the cache should deleted.
+  - LRU(least recently used)
+  - LFU(least frequently used)
+  - NONE - application will crash after cache full
+  - RANDOM	
+
+​		***TopicController.java***
+
+```java
+import org.springframework.cache.annotation.CacheEvict;
+...
+	@RequestMapping(method = RequestMethod.DELETE,value = "/topics/{id}")
+	@CacheEvict("topic-cache")
+	public void deleteTopic(@PathVariable String id) { ... }
+...
+```
 

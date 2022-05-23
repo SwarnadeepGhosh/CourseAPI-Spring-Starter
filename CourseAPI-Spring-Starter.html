@@ -151,20 +151,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           Entity Relationship and Extending Repository</a></li>
           <li><a href="#lesson-apis" id="toc-lesson-apis">Lesson
           APIs</a></li>
-          <li><a href="#actuator---monitoring-app"
-          id="toc-actuator---monitoring-app">Actuator - Monitoring
+          <li><a href="#packaging-prod-ready-app"
+          id="toc-packaging-prod-ready-app">Packaging PROD-ready
           App</a></li>
-          <li><a href="#swagger-documentation-tool"
-          id="toc-swagger-documentation-tool">Swagger (Documentation
-          Tool)</a></li>
-          <li><a href="#packaging-production-ready-app"
-          id="toc-packaging-production-ready-app">Packaging Production
-          Ready App</a></li>
           <li><a href="#hosting-in-heroku"
           id="toc-hosting-in-heroku">Hosting in Heroku</a></li>
           <li><a href="#changing-db-from-mysql-to-postgresql"
           id="toc-changing-db-from-mysql-to-postgresql">Changing DB from
           MySQL to PostgreSQL</a></li>
+          <li><a href="#actuator---monitoring"
+          id="toc-actuator---monitoring">Actuator - Monitoring</a></li>
+          <li><a href="#swagger-documentation"
+          id="toc-swagger-documentation">Swagger Documentation</a></li>
+          <li><a href="#logging-by-slf4j"
+          id="toc-logging-by-slf4j">Logging by SLF4j</a></li>
+          <li><a href="#caching-by-hazlecast"
+          id="toc-caching-by-hazlecast">Caching by Hazlecast</a></li>
           </ul></li>
           </ul>
         </div>
@@ -275,7 +277,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="#c
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">properties</span>&gt;</span></code></pre></div>
 <h4 id="database-er-diagram">Database ER Diagram</h4>
 <figure>
-<img src="Database_ER_diagram.png" alt="Database_ER_diagram.png" />
+<img src="images/Database_ER_diagram.png"
+alt="Database_ER_diagram.png" />
 <figcaption aria-hidden="true">Database_ER_diagram.png</figcaption>
 </figure>
 <h3 id="starting-a-spring-boot-app">Starting a Spring Boot App</h3>
@@ -968,92 +971,26 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb34-1"><a href=
 <strong><em>LessonRepository.java</em></strong> accordingly.</p>
 <p>Visit below address to see all the latest changes for these
 files.</p>
-<h3 id="actuator---monitoring-app">Actuator - Monitoring App</h3>
-<p>Monitoring our app, gathering metrics, understanding traffic, or the
-state of our database become trivial with this dependency. Actuator is a
-production-grade monitoring tool</p>
-<p>Actuator is mainly used to <strong>expose operational information
-about the running application</strong> — health, metrics, info, dump,
-env, etc. It uses HTTP endpoints or JMX beans to enable us to interact
-with it.</p>
-<p>Adding to <strong><em>POM.xml</em></strong></p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-actuator&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
-<p><strong>Actuator Links</strong></p>
-<div class="sourceCode" id="cb36"><pre
-class="sourceCode json"><code class="sourceCode json"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/actuator</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/actuator/health</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/beans</span></span></code></pre></div>
-<h3 id="swagger-documentation-tool">Swagger (Documentation Tool)</h3>
-<p>Swagger is an Interface Description Language for describing RESTful
-APIs expressed using JSON. Swagger is used together with a set of
-open-source software tools to design, build, document, and use RESTful
-web services. Swagger includes automated documentation, code generation,
-and test-case generation. It used for -</p>
-<ul>
-<li>Develop APIs</li>
-<li>Interact with APIs</li>
-<li>Swagger UI - Document APIs (Most Important feature)</li>
-</ul>
-<p><strong>Adding Swagger to Spring Boot</strong></p>
-<ul>
-<li>Getting swagger 2 Spring Dependency. For now, we need to use Spring
-boot 2.5.2 , else it will give error in runtime.</li>
-</ul>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode xml"><code class="sourceCode xml"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">parent</span>&gt;</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-parent&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.5.2&lt;/<span class="kw">version</span>&gt;</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">parent</span>&gt;</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Production Grade API Documentaion Tool --&gt;</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;io.springfox&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;springfox-swagger2&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.9.2&lt;/<span class="kw">version</span>&gt;</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
-<ul>
-<li>Enabling Swagger in code</li>
-</ul>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="at">@SpringBootApplication</span> </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="at">@EnableSwagger2</span>  <span class="co">// Enabling Swagger so that it can run</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseApiApp <span class="op">{</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        SpringApplication<span class="op">.</span><span class="fu">run</span><span class="op">(</span>CourseApiApp<span class="op">.</span><span class="fu">class</span><span class="op">,</span> args<span class="op">);</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Now you can access swagger at :
-http://localhost:8080/swagger-ui.html</p>
-<ul>
-<li>Configuring Swagger</li>
-<li>Adding Details as annotations to APIs</li>
-</ul>
-<h3 id="packaging-production-ready-app">Packaging Production Ready
-App</h3>
+<h3 id="packaging-prod-ready-app">Packaging PROD-ready App</h3>
 <p>There is a line in <code>pom.xml</code>. You can choose the packaging
 format. JAR dosent need to run on Servlet container. But WAR need
 servlet container to run.</p>
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode xml"><code class="sourceCode xml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">packaging</span>&gt;jar&lt;/<span class="kw">packaging</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">packaging</span>&gt;jar&lt;/<span class="kw">packaging</span>&gt;</span></code></pre></div>
 <p>To package the Spring Boot app , go to project folder ,</p>
 <ol type="1">
 <li><p>list all files and make sure you can see pom.xml</p></li>
-<li><div class="sourceCode" id="cb40"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">swarna@swarna</span> MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter <span class="er">(</span><span class="ex">master</span><span class="kw">)</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">$</span> mvn clean install</span></code></pre></div></li>
+<li><div class="sourceCode" id="cb36"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">swarna@swarna</span> MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter <span class="er">(</span><span class="ex">master</span><span class="kw">)</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">$</span> mvn clean install</span></code></pre></div></li>
 <li><p>jar will be created in
 <code>target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar</code></p></li>
 </ol>
 <p>You can run the jar file in any <em>java installed environment</em>
 using :</p>
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">swarna@swarna</span> MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter <span class="er">(</span><span class="ex">master</span><span class="kw">)</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> java <span class="at">-jar</span> target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">swarna@swarna</span> MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter <span class="er">(</span><span class="ex">master</span><span class="kw">)</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> java <span class="at">-jar</span> target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar</span></code></pre></div>
 <h3 id="hosting-in-heroku">Hosting in Heroku</h3>
 <p>Heroku is a popular platform for hosting all types of applications.
 There is a Free plan for personal projects also.</p>
@@ -1065,43 +1002,43 @@ href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku
 CLI</a>.</p>
 <p>If you haven’t already, log in to your Heroku account and follow the
 prompts to create a new SSH public key.</p>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku login</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku login</span></code></pre></div>
 <p><strong>Clone the repository</strong> (You can ignore this step if
 you already have git repo initialised)</p>
 <p>Use Git to clone courseapi-spring-boot’s source code to your local
 machine.</p>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku git:clone <span class="at">-a</span> courseapi-spring-boot </span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd courseapi-spring-boot</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku git:clone <span class="at">-a</span> courseapi-spring-boot </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd courseapi-spring-boot</span></code></pre></div>
 <h4 id="adding-heroku-remote"><strong>Adding Heroku Remote</strong></h4>
 <p><strong>For New App</strong></p>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku create <span class="at">-a</span> example-app</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Creating</span> app... done, ⬢ example-app</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ex">https://thawing-inlet-61413.herokuapp.com/</span> <span class="kw">|</span> <span class="ex">https://git.heroku.com/example-app.git</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku create <span class="at">-a</span> example-app</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Creating</span> app... done, ⬢ example-app</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="ex">https://thawing-inlet-61413.herokuapp.com/</span> <span class="kw">|</span> <span class="ex">https://git.heroku.com/example-app.git</span></span></code></pre></div>
 <p>You can use the <code>git remote</code> command to confirm that a
 remote named <code>heroku</code> has been set for your app:</p>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote <span class="at">-v</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">heroku</span>  https://git.heroku.com/example-app.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">heroku</span>  https://git.heroku.com/example-app.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote <span class="at">-v</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">heroku</span>  https://git.heroku.com/example-app.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">heroku</span>  https://git.heroku.com/example-app.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code></pre></div>
 <p><strong>For an Existing App</strong></p>
 <p>Add a remote to your local repository with the
 <code>heroku git:remote</code> command. All you need is your Heroku
 app’s name:</p>
-<div class="sourceCode" id="cb46"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku git:remote <span class="at">-a</span> example-app</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> git remote heroku to https://git.heroku.com/example-app.git</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku git:remote <span class="at">-a</span> example-app</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> git remote heroku to https://git.heroku.com/example-app.git</span></code></pre></div>
 <h4 id="deploy-in-heroku">Deploy in heroku</h4>
 <p>Make some changes to the code you just cloned and deploy them to
 Heroku using Git.</p>
-<div class="sourceCode" id="cb47"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add .</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-am</span> <span class="st">&quot;make it better&quot;</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push heroku master</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku open       <span class="at">-</span><span class="op">&gt;</span> to open live application in default browser</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku logs <span class="at">-t</span>    <span class="at">-</span><span class="op">&gt;</span> to see live logs</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add .</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-am</span> <span class="st">&quot;make it better&quot;</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push heroku master</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku open       <span class="at">-</span><span class="op">&gt;</span> to open live application in default browser</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> heroku logs <span class="at">-t</span>    <span class="at">-</span><span class="op">&gt;</span> to see live logs</span></code></pre></div>
 <h4 id="adding-database-addons">Adding Database Addons</h4>
 <p>We can choose db instance from a large addon library for heroku
 app.</p>
@@ -1122,12 +1059,12 @@ Heroku will do that intelligently.</p></li>
 <h3 id="changing-db-from-mysql-to-postgresql">Changing DB from MySQL to
 PostgreSQL</h3>
 <p><strong><em>pom.xml</em></strong></p>
-<div class="sourceCode" id="cb48"><pre
-class="sourceCode xml"><code class="sourceCode xml"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.postgresql&lt;/<span class="kw">groupId</span>&gt;</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;postgresql&lt;/<span class="kw">artifactId</span>&gt;</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">scope</span>&gt;runtime&lt;/<span class="kw">scope</span>&gt;</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.postgresql&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;postgresql&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">scope</span>&gt;runtime&lt;/<span class="kw">scope</span>&gt;</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
 <p><strong><em>application.properties</em></strong></p>
 <pre class="properties"><code>spring.jpa.hibernate.ddl-auto:update
 spring.jpa.show-sql: true
@@ -1139,6 +1076,195 @@ spring.datasource.username=swarnadeep
 spring.datasource.password=&lt;my_password&gt;
 spring.datasource.driver-class-name=org.postgresql.Driver
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect</code></pre>
+<h3 id="actuator---monitoring">Actuator - Monitoring</h3>
+<p>Monitoring our app, gathering metrics, understanding traffic, or the
+state of our database become trivial with this dependency. Actuator is a
+production-grade monitoring tool</p>
+<p>Actuator is mainly used to <strong>expose operational information
+about the running application</strong> — health, metrics, info, dump,
+env, etc. It uses HTTP endpoints or JMX beans to enable us to interact
+with it.</p>
+<p>Adding to <strong><em>POM.xml</em></strong></p>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-actuator&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<p><strong>Actuator Links</strong></p>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/actuator</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/actuator/health</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="er">http://localhost:8080/beans</span></span></code></pre></div>
+<h3 id="swagger-documentation">Swagger Documentation</h3>
+<p>Swagger is an Interface Description Language for describing RESTful
+APIs expressed using JSON. Swagger is used together with a set of
+open-source software tools to design, build, document, and use RESTful
+web services. Swagger includes automated documentation, code generation,
+and test-case generation. It used for -</p>
+<ul>
+<li>Develop APIs</li>
+<li>Interact with APIs</li>
+<li>Swagger UI - Document APIs (Most Important feature)</li>
+</ul>
+<p><strong>Adding Swagger to Spring Boot</strong></p>
+<ul>
+<li>Getting swagger 2 Spring Dependency. For now, we need to use Spring
+boot 2.5.2 , else it will give error in runtime.</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">parent</span>&gt;</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-parent&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.5.2&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">parent</span>&gt;</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Production Grade API Documentaion Tool --&gt;</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">groupId</span>&gt;io.springfox&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">artifactId</span>&gt;springfox-swagger2&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">version</span>&gt;2.9.2&lt;/<span class="kw">version</span>&gt;</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<ul>
+<li>Enabling Swagger in code</li>
+</ul>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="at">@SpringBootApplication</span> </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="at">@EnableSwagger2</span>  <span class="co">// Enabling Swagger so that it can run</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseApiApp <span class="op">{</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>        SpringApplication<span class="op">.</span><span class="fu">run</span><span class="op">(</span>CourseApiApp<span class="op">.</span><span class="fu">class</span><span class="op">,</span> args<span class="op">);</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Now you can access swagger at :
+http://localhost:8080/swagger-ui.html</p>
+<ul>
+<li>Configuring Swagger</li>
+<li>Adding Details as annotations to APIs</li>
+</ul>
+<h3 id="logging-by-slf4j">Logging by SLF4j</h3>
+<p><strong><em>application.properties</em></strong></p>
+<pre class="properties"><code>############### Logging ###############
+logging.file.name=logs/application.log
+logging.level.root=INFO,ERROR,DEBUG
+# Log Level for springframework (info, error, debug etc)
+#logging.level.org.springframework = error
+# Log Level for Specific Controller
+#logging.level.com.swarna.todoFullStack.todo = error</code></pre>
+<p><strong><em>TopicController.java</em></strong></p>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">slf4j</span><span class="op">.</span><span class="im">Logger</span><span class="op">;</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">slf4j</span><span class="op">.</span><span class="im">LoggerFactory</span><span class="op">;</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">// defining LOGGER </span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">static</span> <span class="dt">final</span> <span class="bu">Logger</span> LOGGER <span class="op">=</span> LoggerFactory<span class="op">.</span><span class="fu">getLogger</span><span class="op">(</span>TopicController<span class="op">.</span><span class="fu">class</span><span class="op">);</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co">// using Logger within method </span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>LOGGER<span class="op">.</span><span class="fu">info</span><span class="op">(</span><span class="st">&quot;Fetching one topic for particular id &quot;</span> <span class="op">+</span>id<span class="op">);</span></span></code></pre></div>
+<p>Output file : <strong><code>logs\application.log</code></strong></p>
+<pre class="log"><code></code></pre>
+<h5 id="rolling-log">Rolling Log</h5>
+<p>Spring boot automatic roll its log files. Lets say
+<code>logging.file.name=logs/application.log</code> , then it will make
+a <code>.gz</code> file with the previous day’s log and save it in same
+folder with name : <code>application.log.2022-05-22.0.gz</code></p>
+<h3 id="caching-by-hazlecast">Caching by Hazlecast</h3>
+<p>Caching is a process of storing the objects that are converted from
+database records into a temporary memory location so that when the
+client reads the same exact data the orm tools need not go against the
+database.</p>
+<p>To enable caching for our applications Spring boot uses third party
+cash providers like Hazelcast or EH cache or JBoss cache. Cache
+Hazelcast is a popular one and we’ll use that.</p>
+<h4 id="steps">Steps</h4>
+<ol type="1">
+<li>Add dependencies - SpringBoot and Hazlecast</li>
+</ol>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">groupId</span>&gt;org.springframework.boot&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">artifactId</span>&gt;spring-boot-starter-cache&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">groupId</span>&gt;com.hazelcast&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">artifactId</span>&gt;hazelcast&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dependency</span>&gt;</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">groupId</span>&gt;com.hazelcast&lt;/<span class="kw">groupId</span>&gt;</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">artifactId</span>&gt;hazelcast-spring&lt;/<span class="kw">artifactId</span>&gt;</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dependency</span>&gt;</span></code></pre></div>
+<ol start="2" type="1">
+<li><p>Create Cache Configuration and we need to serialize model class
+also.</p>
+<p><strong><code>com\swarna\courseapi\config\CacheConfig.java</code></strong></p>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span><span class="im"> com</span><span class="op">.</span><span class="im">swarna</span><span class="op">.</span><span class="im">courseapi</span><span class="op">;</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">context</span><span class="op">.</span><span class="im">annotation</span><span class="op">.</span><span class="im">Bean</span><span class="op">;</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">context</span><span class="op">.</span><span class="im">annotation</span><span class="op">.</span><span class="im">Configuration</span><span class="op">;</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">com</span><span class="op">.</span><span class="im">hazelcast</span><span class="op">.</span><span class="im">config</span><span class="op">.</span><span class="im">Config</span><span class="op">;</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">com</span><span class="op">.</span><span class="im">hazelcast</span><span class="op">.</span><span class="im">config</span><span class="op">.</span><span class="im">MapConfig</span><span class="op">;</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="at">@Configuration</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CacheConfig <span class="op">{</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a> <span class="co">// @Bean</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span> Config <span class="fu">cacheConfig</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> <span class="kw">new</span> <span class="fu">Config</span><span class="op">()</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">setInstanceName</span><span class="op">(</span><span class="st">&quot;hazle-instance&quot;</span><span class="op">)</span> <span class="co">// instance name for caching</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">addMapConfig</span><span class="op">(</span><span class="kw">new</span> <span class="fu">MapConfig</span><span class="op">()</span> <span class="co">// Adding one cache, we can configure as many cache as we want</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>                      <span class="op">.</span><span class="fu">setName</span><span class="op">(</span><span class="st">&quot;topic-cache&quot;</span><span class="op">)</span> <span class="co">// cache will be saved with this name</span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>                      <span class="op">.</span><span class="fu">setTimeToLiveSeconds</span><span class="op">(</span><span class="dv">3000</span><span class="op">));</span> <span class="co">// cache will be evicted after 5 minutes</span></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a> <span class="op">}</span></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><strong><em>Topic.java</em></strong> - Serializing model class
+also.</p>
+<div class="sourceCode" id="cb55"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">io</span><span class="op">.</span><span class="im">Serializable</span><span class="op">;</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Topic <span class="kw">implements</span> <span class="bu">Serializable</span> <span class="op">{</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">private</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">long</span> serialVersionUID <span class="op">=</span> <span class="dv">1L</span><span class="op">;</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">...</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>Enable and user caching - <code>@EnableCaching</code>,
+<code>@Cacheable("cache-name")</code> and
+<code>@Transactional(readOnly = true)</code> in Controller method.</p>
+<p><strong><em>CourseApiApp.java</em></strong> - Enabling cashing in
+<code>main()</code> method.</p>
+<div class="sourceCode" id="cb56"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">cache</span><span class="op">.</span><span class="im">annotation</span><span class="op">.</span><span class="im">EnableCaching</span><span class="op">;</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="at">@EnableCaching</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CourseApiApp <span class="op">{</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>     SpringApplication<span class="op">.</span><span class="fu">run</span><span class="op">(</span>TodoFullStackApplication<span class="op">.</span><span class="fu">class</span><span class="op">,</span> args<span class="op">);</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a> <span class="op">}</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><strong><em>TopicController.java</em></strong> - Adding Cacheable and
+Transactional</p>
+<div class="sourceCode" id="cb57"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">cache</span><span class="op">.</span><span class="im">annotation</span><span class="op">.</span><span class="im">Cacheable</span><span class="op">;</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">transaction</span><span class="op">.</span><span class="im">annotation</span><span class="op">.</span><span class="im">Transactional</span><span class="op">;</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a> <span class="at">@RequestMapping</span><span class="op">(</span><span class="st">&quot;/topics/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a> <span class="at">@Transactional</span><span class="op">(</span>readOnly <span class="op">=</span> <span class="kw">true</span><span class="op">)</span> <span class="co">// True for select, for update/insert, false for default</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Cacheable</span><span class="op">(</span><span class="st">&quot;topic-cache&quot;</span><span class="op">)</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span> Optional<span class="op">&lt;</span>Topic<span class="op">&gt;</span> <span class="fu">getTopic</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span> <span class="kw">...</span> <span class="op">}</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>Evict cache method - by what time the cache should
+deleted.</p></li>
+</ol>
+<ul>
+<li>LRU(least recently used)</li>
+<li>LFU(least frequently used)</li>
+<li>NONE - application will crash after cache full</li>
+<li>RANDOM</li>
+</ul>
+<p>​ <strong><em>TopicController.java</em></strong></p>
+<div class="sourceCode" id="cb58"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">springframework</span><span class="op">.</span><span class="im">cache</span><span class="op">.</span><span class="im">annotation</span><span class="op">.</span><span class="im">CacheEvict</span><span class="op">;</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">@RequestMapping</span><span class="op">(</span>method <span class="op">=</span> RequestMethod<span class="op">.</span><span class="fu">DELETE</span><span class="op">,</span>value <span class="op">=</span> <span class="st">&quot;/topics/{id}&quot;</span><span class="op">)</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@CacheEvict</span><span class="op">(</span><span class="st">&quot;topic-cache&quot;</span><span class="op">)</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">deleteTopic</span><span class="op">(</span><span class="at">@PathVariable</span> <span class="bu">String</span> id<span class="op">)</span> <span class="op">{</span> <span class="kw">...</span> <span class="op">}</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span></code></pre></div>
         </div>
       </div>
     </div>
