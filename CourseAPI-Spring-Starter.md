@@ -1196,3 +1196,40 @@ import org.springframework.cache.annotation.CacheEvict;
 ...
 ```
 
+
+
+
+
+### Spring Batch
+
+Spring Batch is a lightweight, comprehensive framework designed to facilitate the development of robust batch applications.
+
+Task - Copying data , Transfering files, Generate Reports
+
+**Main Task - Run and schedule Jobs**
+
+**Steps** 
+
+1. So to implement batching in a spring application we first create a job. A job is comprised of multiple steps each step is comprised of **ItemReader**, **ItemProcessor**, ItemWriter. Then Optionally you can also create a **JobListener**.
+
+   Step
+
+   - ItemReader
+
+   - ItemProcessor
+
+   - ItemWriter
+
+2. Once we have these all these will be stored in a job repository by spring batch automatically.
+
+3. So the job launcher is responsible for taking the job and executing it when required.
+
+4. Once you have all these in place, you create a job using the **job builder factory** into the job builder factory you tell- What is the step.
+
+5. to create a step itself, You use a **step builder factory**.
+
+6. Then we use a database it will store all these details the job details the step details in the database and we use a **JobLauncher** from Spring Batch to run a particular job. 
+
+7.  you configure all these items reader item processor item reader and the step and job in a Java based configuration file (BatchConfig) . it will create all these beans inside.
+
+8. you can pass parameters using an object called Job parameters if you want to pass in any additional data to the job itself.

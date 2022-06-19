@@ -9,6 +9,7 @@ com\swarna\courseapi\course\CourseRepository.class
 com\swarna\courseapi\lesson\Lesson$LessonBuilder.class
 com\swarna\courseapi\topic\Topic.class
 com\swarna\courseapi\lesson\LessonRepository.class
+com\swarna\courseapi\config\CorsConfig.class
 com\swarna\courseapi\course\CourseService.class
 com\swarna\courseapi\lesson\Lesson.class
 com\swarna\courseapi\lesson\LessonService.class
