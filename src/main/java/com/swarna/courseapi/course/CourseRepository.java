@@ -1,8 +1,11 @@
 package com.swarna.courseapi.course;
 
 import java.util.List;
+
+// org.springframework.data.repository.Repository
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
 
 @Repository
 public interface CourseRepository extends CrudRepository<Course, String> {
