@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "https://courseapi.vercel.app")
+@RequestMapping("/api")
 public class TopicController {
 	
 	@Autowired

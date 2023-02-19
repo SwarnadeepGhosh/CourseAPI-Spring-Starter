@@ -18,6 +18,7 @@ import com.swarna.courseapi.course.Course;
 
 @CrossOrigin(origins = "https://courseapi.vercel.app")
 @RestController
+@RequestMapping("/api")
 public class LessonController {
 	
 	@Autowired
