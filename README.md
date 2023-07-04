@@ -2,20 +2,20 @@
 
 Here I have created a production grade CourseAPI complete CRUD backend using Spring Boot, JPA, my own PostgreSQL Database instance and hosted it on Heroku.
 
-#### Live Link - [Hosted on Heroku](https://courseapi-spring-boot.herokuapp.com)
+#### Live Link - [Hosted on Azure](https://courseapi-backend.azurewebsites.net)
 
 
 
 ### Sample APIs to check the functionalities
 
-- GetAllTopics - https://courseapi-spring-boot.herokuapp.com/topics
-- GetAllCourses for Topic Id "java" - https://courseapi-spring-boot.herokuapp.com/topics/java/courses
+- GetAllTopics - https://courseapi-backend.azurewebsites.net/api/topics
+- GetAllCourses for Topic Id "java" - https://courseapi-backend.azurewebsites.net/api/topics/java/courses
 
-- GetAllLessons for Course Id "java-8"- https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons
+- GetAllLessons for Course Id "java-8"- https://courseapi-backend.azurewebsites.net/api/topics/java/courses/java-8/lessons
 
-- Get API health - https://courseapi-spring-boot.herokuapp.com/actuator/health
+- Get API health - https://courseapi-backend.azurewebsites.net/api/actuator/health
 
-- **Swagger UI to Test all APIs** - https://courseapi-spring-boot.herokuapp.com/swagger-ui.html
+- **Swagger UI to Test all APIs** - https://courseapi-backend.azurewebsites.net/api/swagger-ui.html
 
 
 
@@ -76,7 +76,7 @@ Here we have 3 Controllers
 
 ### Demo
 
-Fetching all Topics : https://courseapi-spring-boot.herokuapp.com/topics
+Fetching all Topics : https://courseapi-backend.azurewebsites.net/api/topics
 
 ```json
 [
@@ -95,7 +95,7 @@ Fetching all Topics : https://courseapi-spring-boot.herokuapp.com/topics
 
 
 
-Fetching All courses under Topic Id "java" : https://courseapi-spring-boot.herokuapp.com/topics/java/courses
+Fetching All courses under Topic Id "java" : https://courseapi-backend.azurewebsites.net/api/topics/java/courses
 
 ```json
 [
@@ -114,7 +114,7 @@ Fetching All courses under Topic Id "java" : https://courseapi-spring-boot.herok
 
 
 
-Fetching All lessons under Course Id "java-8" : https://courseapi-spring-boot.herokuapp.com/topics/java/courses/java-8/lessons
+Fetching All lessons under Course Id "java-8" : https://courseapi-backend.azurewebsites.net/api/topics/java/courses/java-8/lessons
 
 ```json
 [
@@ -134,6 +134,18 @@ Fetching All lessons under Course Id "java-8" : https://courseapi-spring-boot.he
         }
     }
 ]
+```
+
+### Docker commands
+```sh
+# Build
+docker build -t swarnadeepghosh/courseapi-backend:0.0.1-RELEASE .
+ 
+# Run in local
+docker run -d -p 8080:8080 --name=courseapi-backend swarnadeepghosh/courseapi-backend:0.0.1-RELEASE
+
+# push to dockerhub
+docker push swarnadeepghosh/courseapi-backend:0.0.1-RELEASE
 ```
 
 
