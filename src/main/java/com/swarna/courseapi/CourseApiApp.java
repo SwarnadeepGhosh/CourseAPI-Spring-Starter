@@ -4,11 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
-//import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication //annotation to tell Spring , this is a Boot Application
 //@EnableSwagger2  // Enabling Swagger so that it can run
 @EnableCaching //Enabling Caching
+@OpenAPIDefinition(info = @Info(title = "CourseAPI", version = "2.0", description = "CourseAPI Information"))
 public class CourseApiApp {
 
 	public static void main(String[] args) {

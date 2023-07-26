@@ -24,7 +24,7 @@ public class LessonController {
 	@Autowired
 	private LessonService lessonService;
 	
-	@RequestMapping("/topics/{topicId}/courses/{courseId}/lessons")
+	@GetMapping("/topics/{topicId}/courses/{courseId}/lessons")
 	public List<Lesson> getAllLessons(@PathVariable String courseId) {
 		return lessonService.getAllLessons(courseId);
 	}

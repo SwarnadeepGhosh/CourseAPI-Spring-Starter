@@ -4,8 +4,10 @@ Here I have created a production grade CourseAPI complete CRUD backend using Spr
 
 #### Live Link - [Hosted on Azure](https://courseapi-backend.azurewebsites.net)
 
+##### [OpenAPI Link](https://courseapi-backend.azurewebsites.net/api-docs)
+##### [Swagger UI Link](https://courseapi-backend.azurewebsites.net/docs.html)
 
-
+---
 ### Sample APIs to check the functionalities
 
 - GetAllTopics - https://courseapi-backend.azurewebsites.net/api/topics

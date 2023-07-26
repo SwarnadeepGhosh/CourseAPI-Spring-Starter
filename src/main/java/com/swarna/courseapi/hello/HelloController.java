@@ -1,17 +1,18 @@
 package com.swarna.courseapi.hello;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
 
-	@RequestMapping("/hello")
+	@GetMapping("/hello")
 	public String sayHi() {
 		return "Hi";
 	}
 	
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String sayHiello() {
 		return "Hello there. Have a good day. \\n\t "
 				+ "Visit http://courseapi-spring-boot.herokuapp.com/topics - for all topics \\n"
