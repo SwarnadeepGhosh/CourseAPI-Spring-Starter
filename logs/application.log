@@ -1,4 +1,62 @@
-2023-07-26 00:13:27.626  INFO 20344 --- [RMI TCP Connection(128)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2023-07-26 00:13:27.812  INFO 20344 --- [RMI TCP Connection(128)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-07-26 00:13:27.839  INFO 20344 --- [RMI TCP Connection(128)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-07-26 00:13:28.284  INFO 20344 --- [RMI TCP Connection(128)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-05T10:39:59.817+05:30  INFO 19192 --- [courseapi] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-05T10:39:59.818+05:30  INFO 19192 --- [courseapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-05T10:39:59.831+05:30  INFO 19192 --- [courseapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-04-05T10:39:59.907+05:30  WARN 19192 --- [courseapi] [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /docs.html
+2026-04-05T10:39:59.919+05:30  WARN 19192 --- [courseapi] [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No endpoint GET /docs.html.
+2026-04-05T10:40:05.298+05:30  WARN 19192 --- [courseapi] [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /docs.html
+2026-04-05T10:40:05.300+05:30  WARN 19192 --- [courseapi] [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No endpoint GET /docs.html.
+2026-04-05T10:40:14.305+05:30  INFO 19192 --- [courseapi] [http-nio-8080-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 783 ms
+2026-04-05T10:44:55.050+05:30  WARN 19192 --- [courseapi] [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /topics
+2026-04-05T10:44:55.056+05:30  WARN 19192 --- [courseapi] [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No endpoint GET /topics.
+2026-04-05T10:45:43.315+05:30  INFO 19192 --- [courseapi] [http-nio-8080-exec-10] c.s.courseapi.topic.TopicController      : Fetching one topic for particular id .net
+2026-04-05T10:47:20.408+05:30  INFO 19192 --- [courseapi] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-05T10:47:20.422+05:30  INFO 19192 --- [courseapi] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-05T10:47:20.436+05:30  INFO 19192 --- [courseapi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-05T10:47:20.446+05:30  INFO 19192 --- [courseapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-05T10:47:20.872+05:30  INFO 19192 --- [courseapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-05T10:47:28.718+05:30  INFO 4892 --- [courseapi] [main] com.swarna.courseapi.CourseApiApp        : Starting CourseApiApp using Java 21.0.2 with PID 4892 (D:\My-Projects\Courseopedia-fullstack\CourseAPI-Spring-Starter\target\classes started by swarn in D:\My-Projects\Courseopedia-fullstack\CourseAPI-Spring-Starter)
+2026-04-05T10:47:28.726+05:30  INFO 4892 --- [courseapi] [main] com.swarna.courseapi.CourseApiApp        : No active profile set, falling back to 1 default profile: "default"
+2026-04-05T10:47:31.489+05:30  INFO 4892 --- [courseapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-05T10:47:31.590+05:30  INFO 4892 --- [courseapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
+2026-04-05T10:47:33.090+05:30  INFO 4892 --- [courseapi] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-05T10:47:33.118+05:30  INFO 4892 --- [courseapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-05T10:47:33.119+05:30  INFO 4892 --- [courseapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-05T10:47:33.264+05:30  INFO 4892 --- [courseapi] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4312 ms
+2026-04-05T10:47:33.881+05:30  INFO 4892 --- [courseapi] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-05T10:47:34.027+05:30  INFO 4892 --- [courseapi] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-05T10:47:35.028+05:30  INFO 4892 --- [courseapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-05T10:47:35.101+05:30  INFO 4892 --- [courseapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-05T10:47:36.344+05:30  INFO 4892 --- [courseapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@144dc2f7
+2026-04-05T10:47:36.346+05:30  INFO 4892 --- [courseapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-05T10:47:36.696+05:30  INFO 4892 --- [courseapi] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://free-tier12.aws-ap-south-1.cockroachlabs.cloud:26257/swarna-db-200.defaultdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: CockroachDialect
+	Database version: 25.4.5
+	Default catalog/schema: defaultdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: SERIALIZABLE [default SERIALIZABLE]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-05T10:47:38.052+05:30  INFO 4892 --- [courseapi] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-05T10:47:39.169+05:30  INFO 4892 --- [courseapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-05T10:47:39.343+05:30  INFO 4892 --- [courseapi] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-05T10:47:41.207+05:30  INFO 4892 --- [courseapi] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoints beneath base path '/actuator'
+2026-04-05T10:47:41.378+05:30  INFO 4892 --- [courseapi] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-05T10:47:41.402+05:30  INFO 4892 --- [courseapi] [main] com.swarna.courseapi.CourseApiApp        : Started CourseApiApp in 13.675 seconds (process running for 14.618)
+2026-04-05T10:47:41.588+05:30  WARN 4892 --- [courseapi] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-04-05T10:47:41.588+05:30  WARN 4892 --- [courseapi] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /docs.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-04-05T10:47:51.052+05:30  INFO 4892 --- [courseapi] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-05T10:47:51.054+05:30  INFO 4892 --- [courseapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-05T10:47:51.059+05:30  INFO 4892 --- [courseapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-04-05T10:47:52.494+05:30  INFO 4892 --- [courseapi] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 768 ms
+2026-04-05T10:47:59.905+05:30  WARN 4892 --- [courseapi] [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /swagger-ui.html
+2026-04-05T10:47:59.910+05:30  WARN 4892 --- [courseapi] [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No endpoint GET /swagger-ui.html.
+2026-04-05T10:48:12.199+05:30  INFO 4892 --- [courseapi] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 197 ms
+2026-04-05T10:54:29.524+05:30  INFO 4892 --- [courseapi] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-05T10:54:29.535+05:30  INFO 4892 --- [courseapi] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-05T10:54:29.546+05:30  INFO 4892 --- [courseapi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-05T10:54:29.552+05:30  INFO 4892 --- [courseapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-05T10:54:29.962+05:30  INFO 4892 --- [courseapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

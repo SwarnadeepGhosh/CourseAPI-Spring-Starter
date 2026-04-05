@@ -49,7 +49,7 @@
 ```xml
 <groupId>com.swarna.springboot</groupId>
 <artifactId>CourseAPI-Spring-Starter</artifactId>
-<version>0.0.1-SNAPSHOT</version>
+<version>1.0</version>
 <name>CourseAPI-Spring-Starter</name>
 <description>CourseAPI-Spring Boot Starter project created took help from Java Brains</description>
 ```
@@ -837,13 +837,13 @@ To package the Spring Boot app , go to project folder ,
    $ mvn clean install
    ```
 
-3. jar will be created in `target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar`
+3. jar will be created in `target/CourseAPI-Spring-Starter-1.0.jar`
 
 You can run the jar file in any *java installed environment* using : 
 
 ```bash
 swarna@swarna MINGW64 /e/JAVA-Backend/CourseAPI-Spring-Starter (master)
-$ java -jar target/CourseAPI-Spring-Starter-0.0.1-SNAPSHOT.jar
+$ java -jar target/CourseAPI-Spring-Starter-1.0.jar
 ```
 
 

@@ -2,22 +2,22 @@
 
 Here I have created a production grade CourseAPI complete CRUD backend using Spring Boot, JPA, my own PostgreSQL Database instance and hosted it on Heroku.
 
-#### Live Link - [Hosted on Azure](https://courseapi-backend.azurewebsites.net)
+#### Live Link - [Hosted on Azure](https://courseapi.onrender.com)
 
-##### [OpenAPI Link](https://courseapi-backend.azurewebsites.net/api-docs)
-##### [Swagger UI Link](https://courseapi-backend.azurewebsites.net/docs.html)
+##### [OpenAPI Link](https://courseapi.onrender.com/api-docs)
+##### [Swagger UI Link](https://courseapi.onrender.com/docs.html)
 
 ---
 ### Sample APIs to check the functionalities
 
-- GetAllTopics - https://courseapi-backend.azurewebsites.net/api/topics
-- GetAllCourses for Topic Id "java" - https://courseapi-backend.azurewebsites.net/api/topics/java/courses
+- GetAllTopics - https://courseapi.onrender.com/api/topics
+- GetAllCourses for Topic Id "java" - https://courseapi.onrender.com/api/topics/java/courses
 
-- GetAllLessons for Course Id "java-8"- https://courseapi-backend.azurewebsites.net/api/topics/java/courses/java-8/lessons
+- GetAllLessons for Course Id "java-8"- https://courseapi.onrender.com/api/topics/java/courses/java-8/lessons
 
-- Get API health - https://courseapi-backend.azurewebsites.net/api/actuator/health
+- Get API health - https://courseapi.onrender.com/api/actuator/health
 
-- **Swagger UI to Test all APIs** - https://courseapi-backend.azurewebsites.net/api/swagger-ui.html
+- **Swagger UI to Test all APIs** - https://courseapi.onrender.com/api/swagger-ui.html
 
 
 
@@ -78,7 +78,7 @@ Here we have 3 Controllers
 
 ### Demo
 
-Fetching all Topics : https://courseapi-backend.azurewebsites.net/api/topics
+Fetching all Topics : https://courseapi.onrender.com/api/topics
 
 ```json
 [
@@ -97,7 +97,7 @@ Fetching all Topics : https://courseapi-backend.azurewebsites.net/api/topics
 
 
 
-Fetching All courses under Topic Id "java" : https://courseapi-backend.azurewebsites.net/api/topics/java/courses
+Fetching All courses under Topic Id "java" : https://courseapi.onrender.com/api/topics/java/courses
 
 ```json
 [
@@ -116,7 +116,7 @@ Fetching All courses under Topic Id "java" : https://courseapi-backend.azurewebs
 
 
 
-Fetching All lessons under Course Id "java-8" : https://courseapi-backend.azurewebsites.net/api/topics/java/courses/java-8/lessons
+Fetching All lessons under Course Id "java-8" : https://courseapi.onrender.com/api/topics/java/courses/java-8/lessons
 
 ```json
 [
@@ -141,13 +141,13 @@ Fetching All lessons under Course Id "java-8" : https://courseapi-backend.azurew
 ### Docker commands
 ```sh
 # Build
-docker build -t swarnadeepghosh/courseapi-backend:0.0.1-RELEASE .
+docker build -t swarnadeepghosh/courseapi-backend:1.0 .
  
 # Run in local
-docker run -d -p 8080:8080 --name=courseapi-backend swarnadeepghosh/courseapi-backend:0.0.1-RELEASE
+docker run -d -p 8080:8080 --name=courseapi-backend swarnadeepghosh/courseapi-backend:1.0
 
 # push to dockerhub
-docker push swarnadeepghosh/courseapi-backend:0.0.1-RELEASE
+docker push swarnadeepghosh/courseapi-backend:1.0
 ```
 
 

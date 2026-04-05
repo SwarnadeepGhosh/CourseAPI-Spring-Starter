@@ -1,9 +1,9 @@
 package com.swarna.courseapi.topic;
 
-import java.io.Serializable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
 public class Topic implements Serializable{
